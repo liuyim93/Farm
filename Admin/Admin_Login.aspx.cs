@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Security;
 using BLL;
 using Model;
+using Tools;
 
 public partial class Admin_Admin_Login : System.Web.UI.Page
 {
@@ -37,9 +38,24 @@ public partial class Admin_Admin_Login : System.Web.UI.Page
             string userName = uid.Value;
             string password = pwd.Value;
             List<Admin> list_admin = AdminBll.GetAdmin(userName,password);
-            if (list_admin.Count<0)
+            if (list_admin.Count < 0)
             {
-                
+                MessageBox.Alert("用户名或密码错误！", Page);
+                pwd.Value = "";
+            }
+            else 
+            {
+                if (code.Value != Session["CheckCode"].ToString())
+                {
+                    MessageBox.Alert("验证码错误!", Page);
+                    code.Value = "";
+                }
+                else 
+                {
+                    Session["AdminID"]=list_admin[0].AdminID;
+                    Session["AdminName"]=userName;
+                    Response.Redirect("Admin_Index.aspx");
+                }   
             }
         }
     }
