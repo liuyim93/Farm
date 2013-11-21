@@ -1,0 +1,9 @@
+F:\刘义铭\Farm\BLL\bin\Debug\BLL.dll
+F:\刘义铭\Farm\BLL\bin\Debug\BLL.pdb
+F:\刘义铭\Farm\BLL\bin\Debug\DAL.dll
+F:\刘义铭\Farm\BLL\bin\Debug\Model.dll
+F:\刘义铭\Farm\BLL\bin\Debug\DAL.pdb
+F:\刘义铭\Farm\BLL\bin\Debug\Model.pdb
+F:\刘义铭\Farm\BLL\obj\Debug\ResolveAssemblyReference.cache
+F:\刘义铭\Farm\BLL\obj\Debug\BLL.dll
+F:\刘义铭\Farm\BLL\obj\Debug\BLL.pdb
