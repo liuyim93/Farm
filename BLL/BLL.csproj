@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminBll.cs" />
+    <Compile Include="InfoBll.cs" />
+    <Compile Include="IntroBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,5 +13,6 @@ namespace Model
         public string Adress { get; set; }
         public string Linkman { get; set; }
         public string Email { get; set; }
+        public string FarmName { get; set; }
     }
 }

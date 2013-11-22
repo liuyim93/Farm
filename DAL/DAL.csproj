@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDal.cs" />
+    <Compile Include="InfoDal.cs" />
+    <Compile Include="IntroDal.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

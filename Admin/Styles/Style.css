@@ -1,0 +1,5 @@
+﻿body {padding:0px;margin:0px;
+}
+ul{list-style:none;}
+.admin_index_left{width:160px; height:100%;}
+.admin_index_top{width:100%;height:35px;background:url("../Images/admin_top_bg.gif") repeat scroll;}

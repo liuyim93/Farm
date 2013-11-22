@@ -11,5 +11,6 @@ namespace Model
         public string Detail { get; set; }
         public int IntroTypeID { get; set; }
         public DateTime LoadTime { get; set; }
+        public string IntroType { get; set; }
     }
 }

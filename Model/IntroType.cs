@@ -7,7 +7,7 @@ namespace Model
 {
     public class IntroType
     {
-        public int IntroTpyeID { get; set; }
+        public int IntroTypeID { get; set; }
         public string TypeName { get; set; }
     }
 }

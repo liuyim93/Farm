@@ -9,7 +9,7 @@ namespace Tools
 {
     public class MessageBox
     {
-         #region 新版本
+        #region 新版本
         /// <summary>
         /// 弹出JavaScript小窗口
         /// </summary>
@@ -200,6 +200,5 @@ namespace Tools
             #endregion
         }
         #endregion
-    }
     }
 }
