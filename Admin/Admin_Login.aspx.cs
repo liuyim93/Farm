@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Security;
+using System.Web.Security;
 using BLL;
 using Model;
 using Tools;
@@ -36,9 +36,9 @@ public partial class Admin_Admin_Login : System.Web.UI.Page
         else 
         {
             string userName = uid.Value;
-            string password = pwd.Value;
+            string password =FormsAuthentication.HashPasswordForStoringInConfigFile(pwd.Value,"md5");
             List<Admin> list_admin = AdminBll.GetAdmin(userName,password);
-            if (list_admin.Count < 0)
+            if (list_admin.Count <=0)
             {
                 MessageBox.Alert("用户名或密码错误！", Page);
                 pwd.Value = "";

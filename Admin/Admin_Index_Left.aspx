@@ -18,8 +18,8 @@
                 <ul>
                     <li><a href="Admin_Info.aspx" target="main">农庄信息</a></li>
                     <li><a href="Admin_Intro.aspx" target="main">农庄简介</a></li>
-                    <li><a href="" target="main">管理员</a></li>
-                    <li><a href="" target="main">修改密码</a></li>
+                    <li><a href="Admin_ManageAdmin.aspx" target="main">管理员</a></li>
+                    <li><a href="Admin_UpdatePwd.aspx" target="main">修改密码</a></li>
                 </ul>
             </div>
         </div>

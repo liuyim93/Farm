@@ -11,5 +11,7 @@ namespace Model
         public string TypeName { get; set; }
         public int IsShow { get; set; }
         public int ParentID { get; set; }
+        public string Remark { get; set; }
+        public int Rank { get; set; }
     }
 }
