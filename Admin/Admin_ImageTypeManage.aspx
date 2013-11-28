@@ -30,9 +30,9 @@
                             <td>父分类：</td>
                             <td>
                                 <asp:DropDownList ID="drop1" runat="server" 
-                                    onselectedindexchanged="drop1_SelectedIndexChanged"></asp:DropDownList>&nbsp;&nbsp;
+                                    onselectedindexchanged="drop1_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>&nbsp;&nbsp;
                                 <asp:DropDownList ID="drop2" runat="server" Visible="false" 
-                                    onselectedindexchanged="drop2_SelectedIndexChanged"></asp:DropDownList>&nbsp;&nbsp;
+                                    onselectedindexchanged="drop2_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>&nbsp;&nbsp;
                                 <asp:DropDownList ID="drop3" runat="server" Visible="false" 
                                     onselectedindexchanged="drop3_SelectedIndexChanged"></asp:DropDownList>
                             </td>
@@ -45,7 +45,7 @@
                         </tr>
                         <tr>
                             <td>首页显示：</td>
-                            <td><asp:CheckBox ID="chkShow" runat="server" /></td>
+                            <td><asp:CheckBox ID="chkShow" runat="server" Checked="true" /></td>
                         </tr>
                         <tr>
                             <td>说明：</td>
@@ -56,7 +56,7 @@
                             <td><asp:Button ID="btnSubmit" runat="server" Text="提交" onclick="btnSubmit_Click" /></td>
                         </tr>
                         <tr>
-                            <td><asp:Label ID="lblMsg" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="lblMsg" runat="server"></asp:Label><asp:HiddenField ID="hfImgTypeID" runat="server" /></td>
                         </tr>
                         <tr>
                             <td></td>

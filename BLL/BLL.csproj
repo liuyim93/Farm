@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminBll.cs" />
+    <Compile Include="ImageBll.cs" />
     <Compile Include="ImageTypeBll.cs" />
     <Compile Include="InfoBll.cs" />
     <Compile Include="IntroBll.cs" />

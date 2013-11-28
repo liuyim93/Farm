@@ -18,5 +18,56 @@ namespace BLL
         {
             return ImageTypeDal.AddImageType(imgType);
         }
+
+        /// <summary>
+        /// 查询所有的图片分类
+        /// </summary>
+        /// <returns></returns>
+        public static List<ImageType> GetAllImageType() 
+        {
+            string sql = "select * from ImageType";
+            return ImageTypeDal.GetImageType(sql);
+        }
+        /// <summary>
+        /// 根据父ID查询图片分类
+        /// </summary>
+        /// <param name="parentId"></param>
+        /// <returns></returns>
+        public static List<ImageType> GetImageTypebyParentID(int parentId) 
+        {
+            string sql = "select * from ImageType where ParentID="+parentId+" order by Rank asc";
+            return ImageTypeDal.GetImageType(sql);
+        }
+
+        /// <summary>
+        /// 根据ID查询图片分类
+        /// </summary>
+        /// <param name="imgTypeId"></param>
+        /// <returns></returns>
+        public static List<ImageType> GetImageType(int imgTypeId) 
+        {
+            string sql = "select * from ImageType where ImgTypeID="+imgTypeId;
+            return ImageTypeDal.GetImageType(sql);
+        }
+
+        /// <summary>
+        /// 删除图片分类
+        /// </summary>
+        /// <param name="imgTypeId"></param>
+        /// <returns></returns>
+        public static int DeleteImageType(int imgTypeId) 
+        {
+            return ImageTypeDal.DeleteImageType(imgTypeId);
+        }
+
+        /// <summary>
+        /// 修改图片分类
+        /// </summary>
+        /// <param name="imgType"></param>
+        /// <returns></returns>
+        public static int UpdateImageType(ImageType imgType) 
+        {
+            return ImageTypeDal.UpdateImageType(imgType);
+        }
     }
 }

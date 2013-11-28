@@ -12,7 +12,6 @@ namespace Model
         public string ImgUrl { get; set; }
         public int AdminID { get; set; }
         public int ImgTypeID { get; set; }
-        public int ClickNum { get; set; }
         public int IsShow { get; set; }
         public string Remark { get; set; }
         public DateTime LoadTime { get; set; }

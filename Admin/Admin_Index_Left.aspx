@@ -27,8 +27,8 @@
             <div>图片管理</div>
             <div>
                 <ul>
-                    <li><a href="" target="main">分类管理</a></li>
-                    <li><a href="" target="main">图片添加</a></li>
+                    <li><a href="Admin_ImageTypeManage.aspx" target="main">分类管理</a></li>
+                    <li><a href="Admin_AddImage.aspx" target="main">图片添加</a></li>
                     <li><a href="" target="main">图片管理</a></li>
                 </ul>
             </div>

@@ -42,7 +42,7 @@ namespace DAL
         /// <returns></returns>
         public static int AddAdmin(Admin admin) 
         {
-            string sql = "INSERT INTO Admin (UserName,password,IsSuperAdmin,Remark) values (@UserName,@password,@IsSuperAdmin,@Remark)";
+            string sql = "INSERT INTO Admin (UserName,[password],IsSuperAdmin,Remark) values (@UserName,@password,@IsSuperAdmin,@Remark)";
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@UserName", admin.UserName),
                 new OleDbParameter("@password", admin.password),
                 new OleDbParameter("@IsSuperAdmin", admin.IsSuperAdmin),
@@ -68,7 +68,7 @@ namespace DAL
         /// <returns></returns>
         public static int UpdatePwd(int adminId,string password) 
         {
-            string sql = "update Admin set password=@password where AdminID=@AdminID";
+            string sql = "update Admin set [password]=@password where AdminID=@AdminID";
             return SqlHelper.ExecuteNonQuery(CommandType.Text,sql,new OleDbParameter("@AdminID",adminId),
                 new OleDbParameter("@password",password));
         }

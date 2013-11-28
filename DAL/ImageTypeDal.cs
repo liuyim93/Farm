@@ -50,5 +50,32 @@ namespace DAL
             }
             return list;
         }
+
+        /// <summary>
+        /// 删除图片分类
+        /// </summary>
+        /// <param name="imgTypeId"></param>
+        /// <returns></returns>
+        public static int DeleteImageType(int imgTypeId) 
+        {
+            string sql = "delete from ImageType where ImgTypeID=@ImgTypeID";
+            return SqlHelper.ExecuteNonQuery(CommandType.Text,sql,new OleDbParameter("@ImgTypeID",imgTypeId));
+        }
+
+        /// <summary>
+        /// 修改图片分类
+        /// </summary>
+        /// <param name="imgType"></param>
+        /// <returns></returns>
+        public static int UpdateImageType(ImageType imgType) 
+        {
+            string sql = "update ImageType set TypeName=@TypeName,IsShow=@IsShow,Remark=@Remark,Rank=@Rank,ParentID=@ParentID where ImgTypeID=@ImgTypeID";
+            return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@TypeName", imgType.TypeName),
+                new OleDbParameter("@IsShow", imgType.IsShow),
+                new OleDbParameter("@Remark", imgType.Remark),
+                new OleDbParameter("@Rank", imgType.Rank),
+                new OleDbParameter("@ParentID", imgType.ParentID),
+                new OleDbParameter("@ImgTypeID", imgType.ImgTypeID));
+        }
     }
 }
