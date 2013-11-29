@@ -45,6 +45,8 @@
     <Compile Include="ImageTypeBll.cs" />
     <Compile Include="InfoBll.cs" />
     <Compile Include="IntroBll.cs" />
+    <Compile Include="NewsBll.cs" />
+    <Compile Include="NewsTypeBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

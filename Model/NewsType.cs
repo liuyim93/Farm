@@ -9,5 +9,6 @@ namespace Model
     {
         public int NewsTypeID { get; set; }
         public string TypeName { get; set; }
+        public string Remark { get; set; }
     }
 }

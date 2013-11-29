@@ -17,14 +17,14 @@ namespace DAL
         /// <returns></returns>
         public static int AddImage(Image img)
         {
-            string sql = "insert into Image (ImgName,ImgUrl,Remark,AdminID,ImgTypeID,IsShow,LoadTime)values(@ImgName,@ImgUrl,@Remark,@AdminID,@ImgTypeID,@IsShow,@LoadTime)";
+            string sql = "insert into [Image] (ImgName,ImgUrl,Remark,AdminID,ImgTypeID,IsShow,LoadTime)values(@ImgName,@ImgUrl,@Remark,@AdminID,@ImgTypeID,@IsShow,@LoadTime)";
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@ImgName", img.ImgName),
                 new OleDbParameter("@ImgUrl", img.ImgUrl),
                 new OleDbParameter("@Remark", img.Remark),
                 new OleDbParameter("@AdminID", img.AdminID),
                 new OleDbParameter("@ImgTypeID", img.ImgTypeID),
                 new OleDbParameter("@IsShow", img.IsShow),
-                new OleDbParameter("@LoadTime", img.LoadTime));
+                new OleDbParameter("@LoadTime", img.LoadTime.ToString("yyyy-MM-dd hh:mm:ss")));
         }
 
         /// <summary>
@@ -52,6 +52,39 @@ namespace DAL
                 }
             }
             return list;
+        }
+
+        // <summary>
+        // 修改图片
+        // </summary>
+        // <param name="img"></param>
+        // <returns></returns>
+        //public static int UpdateImage(Image img) 
+        //{
+        //    string sql = "update [Image] set ImgName=@ImgName,ImgUrl=@ImgUrl,Remark=@Remark,AdminID=@AdminID,[ImgTypeID]=@ImgTypeID,IsShow=@IsShow where ImgID="+img.ImgID;
+        //    return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@ImgName", img.ImgName),
+        //        new OleDbParameter("@Remark", img.Remark),
+        //        new OleDbParameter("@AdminID", img.AdminID),
+        //        new OleDbParameter("@ImgTypeID", img.ImgTypeID),
+        //        new OleDbParameter("@ImgUrl", img.ImgUrl),
+        //        new OleDbParameter("@IsShow", img.IsShow));
+        //}
+
+        public static int UpdateImage(Image img) 
+        {
+            string sql = "update [Image] set ImgName='"+img.ImgName+"',ImgUrl='"+img.ImgUrl+"',Remark='"+img.Remark+"',AdminID="+img.AdminID+",ImgTypeID="+img.ImgTypeID+",IsShow="+img.IsShow+" where ImgID="+img.ImgID;
+            return SqlHelper.DoSql(sql);
+        }
+
+        /// <summary>
+        /// 删除图片
+        /// </summary>
+        /// <param name="imgId"></param>
+        /// <returns></returns>
+        public static int DeleteImage(int imgId) 
+        {
+            string sql = "delete from [Image] where ImgID=@ImgID";
+            return SqlHelper.ExecuteNonQuery(CommandType.Text,sql,new OleDbParameter("@ImgID",imgId));
         }
     }
 }

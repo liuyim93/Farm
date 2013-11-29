@@ -108,6 +108,10 @@
                     </asp:DataList>
                 </div>
             </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="btnUpload" />
+                <asp:PostBackTrigger ControlID="btnSubmit" />
+            </Triggers>
         </asp:UpdatePanel>
     </div>
     </form>

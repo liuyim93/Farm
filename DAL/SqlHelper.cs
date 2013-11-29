@@ -27,6 +27,22 @@ namespace DAL
             Dar.Fill(ds);
             return ds;
         }
+
+        /// <summary>
+        /// 执行查询操作
+        /// </summary>
+        /// <param name="sql"></param>
+        public static int DoSql(string sql)
+        {            
+            OleDbConnection conn = new OleDbConnection();//创建连接对象
+            conn.ConnectionString = connectionString;//给连接字符串赋值
+            conn.Open();//打开数据库
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            int num=cmd.ExecuteNonQuery();//            
+            conn.Close();//关闭数据库
+            return num;
+        }
+
         /// <summary>
         /// 方法功能：对命令进行初始化
         /// </summary>

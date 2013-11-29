@@ -28,5 +28,36 @@ namespace BLL
             string sql = "select * from [Image] order by LoadTime desc";
             return ImageDal.GetImage(sql);
         }
+
+        /// <summary>
+        /// 根据ID查询图片
+        /// </summary>
+        /// <param name="imgId"></param>
+        /// <returns></returns>
+        public static List<Image> GetImage(int imgId) 
+        {
+            string sql = "select * from [Image] where ImgID="+imgId;
+            return ImageDal.GetImage(sql);
+        }
+
+        /// <summary>
+        /// 修改图片信息
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        public static int UpdateImage(Image img) 
+        {
+            return ImageDal.UpdateImage(img);
+        }
+
+        /// <summary>
+        /// 删除图片
+        /// </summary>
+        /// <param name="imgId"></param>
+        /// <returns></returns>
+        public static int DeleteImage(int imgId) 
+        {
+            return ImageDal.DeleteImage(imgId);
+        }
     }
 }

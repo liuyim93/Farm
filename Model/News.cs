@@ -13,6 +13,7 @@ namespace Model
         public string Author { get; set; }
         public int AdminID { get; set; }
         public string Detail { get; set; }
-        public DateTime LoadTime { get; set; }
+        public string LoadTime { get; set; }
+        public int ClickNum { get; set; }
     }
 }

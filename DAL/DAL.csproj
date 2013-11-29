@@ -46,6 +46,8 @@
     <Compile Include="ImageTypeDal.cs" />
     <Compile Include="InfoDal.cs" />
     <Compile Include="IntroDal.cs" />
+    <Compile Include="NewsDal.cs" />
+    <Compile Include="NewsTypeDal.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

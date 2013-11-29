@@ -14,14 +14,8 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
-        {
-            Bind();
-            drop1.Items.Insert(0,"请选择分类");
-            drop2.Items.Insert(0, "请选择分类");
-            drop3.Items.Insert(0, "请选择分类");
-            drop1.SelectedValue = "0";
-            drop2.SelectedValue = "0";
-            drop3.SelectedValue = "0";
+        {            
+            Bind();            
         }
     }
 
@@ -35,7 +29,9 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
         {
             dlstImg.DataSource = ImageBll.GetAllImage();
             dlstImg.DataBind();
-            BindDrop1();                        
+            BindDrop1();
+            drop1.Items.Insert(0, "请选择分类");
+            drop1.SelectedItem.Text = "请选择分类";            
         }
     }
 
@@ -54,6 +50,8 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
         drop2.DataTextField = "TypeName";
         drop2.DataValueField = "ImgTypeID";
         drop2.DataBind();
+        drop2.Items.Insert(0, "请选择分类");
+        drop2.SelectedItem.Text = "请选择分类";
     }
 
     public void BindDrop3() 
@@ -63,6 +61,8 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
         drop3.DataTextField = "TypeName";
         drop3.DataValueField = "ImgTypeID";
         drop3.DataBind();
+        drop3.Items.Insert(0, "请选择分类");
+        drop3.SelectedItem.Text = "请选择分类";
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -72,14 +72,14 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
             lblMsg.Text = "请输入图片名称";
             txtImgName.Focus();
         }
-        else if (drop1.SelectedValue == "0")
+        else if (drop1.SelectedItem.Text=="请选择分类")
         {
             lblMsg.Text = "请选择分类";
             drop1.Focus();
         }
         else if (hfImgUrl.Value == "")
         {
-            lblMsg.Text = "请先上传图片，在提交。谢谢！";
+            lblMsg.Text = "请先上传图片，在提交。";
         }
         else 
         {
@@ -98,21 +98,36 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
                 img.IsShow = 0;
             }
 
-            if (drop3.SelectedValue != "0")
+            if (drop3.SelectedIndex == -1)
             {
-                img.ImgTypeID = Convert.ToInt32(drop3.SelectedValue);
-            }
-            else 
-            {
-                if (drop2.SelectedValue != "0")
+                if (drop2.SelectedItem.Text != "请选择分类")
                 {
                     img.ImgTypeID = Convert.ToInt32(drop2.SelectedValue);
                 }
-                else 
+                else
                 {
                     img.ImgTypeID = Convert.ToInt32(drop1.SelectedValue);
                 }
             }
+            else 
+            {
+                if (drop3.SelectedItem.Text != "请选择分类")
+                {
+                    img.ImgTypeID = Convert.ToInt32(drop3.SelectedValue);
+                }
+                else
+                {
+                    if (drop2.SelectedItem.Text != "请选择分类")
+                    {
+                        img.ImgTypeID = Convert.ToInt32(drop2.SelectedValue);
+                    }
+                    else
+                    {
+                        img.ImgTypeID = Convert.ToInt32(drop1.SelectedValue);
+                    }
+                }
+            }
+           
             if (hfImgID.Value == "")
             {
                 ImageBll.AddImage(img);
@@ -120,21 +135,29 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
             }
             else 
             {
-                
+                img.ImgID = Convert.ToInt32(hfImgID.Value);
+                ImageBll.UpdateImage(img);
+                MessageBox.Alert("修改成功",Page);
             }
             ClearText();
             Bind();
         }
-
     }
 
     public void ClearText() 
     {
         txtImgName.Text = "";
         txtRemark.Text = "";
-        drop1.SelectedValue = "0";
-        drop2.SelectedValue = "0";
-        drop3.SelectedValue = "0";
+        drop1.SelectedItem.Text="请选择分类";
+        drop2.SelectedItem.Text = "请选择分类";
+        if (drop3.SelectedIndex == -1)
+        {
+            drop3.SelectedIndex = -1;
+        }
+        else 
+        {
+            drop3.SelectedItem.Text = "请选择分类";
+        }        
         hfImgID.Value = "";
         hfImgUrl.Value = "";
         chkShow.Checked = true;
@@ -142,7 +165,70 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
 
     protected void dlstImg_ItemCommand(object source, DataListCommandEventArgs e)
     {
-
+        switch (e.CommandName)
+        {
+            case "change":
+                int imgId = Convert.ToInt32(e.CommandArgument);
+                List<Model.Image> list = ImageBll.GetImage(imgId);
+                txtImgName.Text=list[0].ImgName;
+                txtRemark.Text=list[0].Remark;
+                hfImgID.Value=list[0].ImgID.ToString();
+                hfImgUrl.Value=list[0].ImgUrl;
+                if (list[0].IsShow == 1)
+                {
+                    chkShow.Checked = true;
+                }
+                else 
+                {
+                    chkShow.Checked = false;
+                }
+                List<ImageType> list_type = ImageTypeBll.GetImageType(list[0].ImgTypeID);
+                if (list_type[0].ParentID == 0)
+                {
+                    BindDrop1();
+                    drop1.SelectedValue=list[0].ImgTypeID.ToString();
+                    BindDrop2();
+                    drop2.SelectedItem.Text = "请选择分类";
+                    drop1.Visible = true;
+                    drop2.Visible = true;
+                    drop3.Visible = false;
+                }
+                else
+                {
+                    int Id = list_type[0].ParentID;
+                    List<ImageType> list1 = ImageTypeBll.GetImageType(Id);
+                    if (list1[0].ParentID == 0)
+                    {
+                        BindDrop1();
+                        drop1.SelectedValue = list_type[0].ParentID.ToString();
+                        BindDrop2();
+                        drop2.SelectedValue=list_type[0].ImgTypeID.ToString();
+                        BindDrop3();
+                        drop3.SelectedItem.Text = "请选择分类";
+                    }
+                    else
+                    {
+                        int id = list1[0].ParentID;
+                        List<ImageType> list2 = ImageTypeBll.GetImageType(id);
+                        BindDrop1();
+                        drop1.SelectedValue = list2[0].ImgTypeID.ToString();
+                        BindDrop2();
+                        drop2.SelectedValue = list1[0].ImgTypeID.ToString();
+                        BindDrop3();
+                        drop3.SelectedValue=list_type[0].ImgTypeID.ToString();
+                    }
+                }
+                break;
+            case "del":
+                int imgID = Convert.ToInt32(e.CommandArgument);
+                ImageBll.DeleteImage(imgID);
+                MessageBox.Alert("删除成功",Page);
+                ClearText();
+                Bind();
+                break;
+            default:
+                break;
+        }
     }
 
     protected void btnUpload_Click(object sender, EventArgs e)
@@ -173,8 +259,8 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
                 }
                 else 
                 {
-                    string filename = DateTime.Now.ToString().Replace("-", "").Replace(" ", "").Replace(":", "");
-                    fileupload1.SaveAs("~/Upload/"+filename);
+                    string filename = DateTime.Now.ToString().Replace("-", "").Replace(" ", "").Replace(":", "")+fileType;
+                    fileupload1.SaveAs(Server.MapPath("../Upload/")+filename);
                     hfImgUrl.Value = "../Upload/" + filename;
                 }
             }
@@ -187,6 +273,7 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
         {
             BindDrop2();
             drop2.Visible = true;
+            drop2.SelectedItem.Text="请选择分类";
         }
         else 
         {
@@ -201,6 +288,7 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
         {
             BindDrop3();
             drop3.Visible = true;
+            drop3.SelectedItem.Text="请选择分类";
         }
         else 
         {
