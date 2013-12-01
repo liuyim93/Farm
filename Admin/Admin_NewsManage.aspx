@@ -16,7 +16,7 @@
             <tr>
                 <td colspan="4" width="700px">
                     <asp:GridView ID="gvwNewsManage" runat="server" AutoGenerateColumns="false" 
-                        Width="100%" onrowcommand="gvwNewsManage_RowCommand">
+                        Width="100%" onrowcommand="gvwNewsManage_RowCommand" DataKeyNames="NewsID">
                         <Columns>
                             <asp:TemplateField HeaderText="选择">
                                 <ItemTemplate>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td><asp:CheckBox ID="chkSelectAll" runat="server" Text="全选/反选" 
-                        oncheckedchanged="chkSelectAll_CheckedChanged" />&nbsp;&nbsp;<asp:Button 
+                        oncheckedchanged="chkSelectAll_CheckedChanged" AutoPostBack="true" />&nbsp;&nbsp;<asp:Button 
                         ID="btnDelSelect" runat="server" Text="删除所选" onclick="btnDelSelect_Click" /></td>
             </tr>
         </table>

@@ -7,3 +7,12 @@ F:\刘义铭\Farm\BLL\bin\Debug\Model.pdb
 F:\刘义铭\Farm\BLL\obj\Debug\ResolveAssemblyReference.cache
 F:\刘义铭\Farm\BLL\obj\Debug\BLL.dll
 F:\刘义铭\Farm\BLL\obj\Debug\BLL.pdb
+E:\Project\Farm\BLL\bin\Debug\BLL.dll
+E:\Project\Farm\BLL\bin\Debug\BLL.pdb
+E:\Project\Farm\BLL\bin\Debug\DAL.dll
+E:\Project\Farm\BLL\bin\Debug\Model.dll
+E:\Project\Farm\BLL\bin\Debug\DAL.pdb
+E:\Project\Farm\BLL\bin\Debug\Model.pdb
+E:\Project\Farm\BLL\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\Farm\BLL\obj\Debug\BLL.dll
+E:\Project\Farm\BLL\obj\Debug\BLL.pdb

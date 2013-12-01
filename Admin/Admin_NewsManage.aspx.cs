@@ -41,11 +41,79 @@ public partial class Admin_Admin_NewsManage : System.Web.UI.Page
     }
     protected void chkSelectAll_CheckedChanged(object sender, EventArgs e)
     {
-
+        if (chkSelectAll.Checked)
+        {
+            int chkNum = 0;
+            for (int i = 0; i < gvwNewsManage.Rows.Count; i++)
+            {
+                CheckBox chkSelect = gvwNewsManage.Rows[i].FindControl("chkSelect") as CheckBox;
+                if (chkSelect.Checked)
+                {
+                    chkNum++;
+                }
+            }
+            if (chkNum == 0)
+            {
+                for (int i = 0; i < gvwNewsManage.Rows.Count; i++)
+                {
+                    CheckBox chkSelect = gvwNewsManage.Rows[i].FindControl("chkSelect") as CheckBox;
+                    chkSelect.Checked = true;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < gvwNewsManage.Rows.Count; i++)
+                {
+                    CheckBox chkSelect = gvwNewsManage.Rows[i].FindControl("chkSelect") as CheckBox;
+                    if (chkSelect.Checked)
+                    {
+                        chkSelect.Checked = false;
+                    }
+                    else
+                    {
+                        chkSelect.Checked = true;
+                    }
+                }
+            }
+        }
+        else 
+        {
+            for (int i = 0; i < gvwNewsManage.Rows.Count; i++)
+            {
+                 CheckBox chkSelect=gvwNewsManage.Rows[i].FindControl("chkSelect")as CheckBox;
+                 chkSelect.Checked = false;
+            }
+        }
     }
 
     protected void btnDelSelect_Click(object sender, EventArgs e)
     {
-
+        int chkNum = 0;
+        for (int i = 0; i < gvwNewsManage.Rows.Count; i++)
+        {
+             CheckBox chkSelect=gvwNewsManage.Rows[i].FindControl("chkSelect")as CheckBox;
+             if (chkSelect.Checked)
+             {
+                 chkNum++;
+             }
+        }
+        if (chkNum == 0)
+        {
+            MessageBox.Alert("请选择要删除的数据", Page);
+        }
+        else 
+        {
+            for (int i = 0; i < gvwNewsManage.Rows.Count; i++)
+            {
+                 CheckBox chkSelect=gvwNewsManage.Rows[i].FindControl("chkSelect")as CheckBox;
+                 if (chkSelect.Checked)
+                 {
+                     int newsId = Convert.ToInt32(gvwNewsManage.DataKeys[i].Value);
+                     NewsBll.DeleteNews(newsId);
+                 }
+            }
+            MessageBox.Alert("删除成功",Page);
+            Bind();
+        }
     }
 }

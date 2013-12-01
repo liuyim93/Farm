@@ -12,6 +12,8 @@ namespace Model
         public string Email { get; set; }
         public string Title { get; set; }
         public string Detail { get; set; }
-        public DateTime LoadTime { get; set; }
+        public string LoadTime { get; set; }
+        public string Phone { get; set; }
+        public string Reply { get; set; }
     }
 }

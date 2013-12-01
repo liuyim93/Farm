@@ -14,14 +14,15 @@ public partial class Admin_Admin_AddNews : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            BindNewsType();
+            dropNewsType.Items.Insert(0, "请选择分类");
+            dropNewsType.SelectedItem.Text = "请选择分类";
             Bind();
         }
     }
     public void Bind() 
     {
-        BindNewsType();
-        dropNewsType.Items.Insert(0,"请选择分类");
-        dropNewsType.SelectedItem.Text = "请选择分类";
+        
         if (Request.QueryString["id"]!=null&&Request.QueryString["id"]!="")
         {
             int newsId = Convert.ToInt32(Request.QueryString["id"]);
@@ -53,7 +54,6 @@ public partial class Admin_Admin_AddNews : System.Web.UI.Page
         txtAuthor.Text = "";
         fckeditor1.Value = "";
         hfNewsID.Value="";
-        dropNewsType.SelectedItem.Text = "请选择分类";
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
