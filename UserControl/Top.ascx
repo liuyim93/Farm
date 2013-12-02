@@ -1,29 +1,34 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Top.ascx.cs" Inherits="UserControl_Top" %>
-<div>
-    <div>
-        <a href="" target="_self"><img src="" alt="" width="440px" height="70px" /></a>
+<div class="uc_top">
+    <div class="uc_top_logo">
+        <a href="Index.aspx" target="_self"><img src="Images/logo.jpg" alt="" width="440px" height="70px" /></a>
     </div>
-    <div>
-        <table>
-            <tr>
-                <td><a href="~/Index.aspx" target="_self">首页</a>|
-                    <a href="" target="_self">农家简介</a>|
-                    <a href="" target="_self">住宿设施</a>|
-                    <a href="" target="_self">农家菜肴</a>|
-                    <a href="" target="_self">农家娱乐</a>|
-                    <a href="" target="_self">农家荣誉</a>|
-                    <a href="" target="_self">周边景点</a>|
-                    <a href="" target="_self">最新动态</a>|
-                    <a href="" target="_self">联系我们</a>
-                </td>
-            </tr>
-        </table>
+    <div class="uc_top_menu">
+        <ul>
+            <li><a href="Index.aspx" target="_self">首页</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="" target="_self">农家简介</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="" target="_self">住宿设施</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="" target="_self">农家菜肴</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="" target="_self">农家娱乐</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="" target="_self">农家荣誉</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="" target="_self">周边景点</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="" target="_self">最新动态</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="" target="_self">联系我们</a></li>
+        </ul>
     </div>
     <div id="picplayer">        
     </div>
      <script type="text/javascript">
                     var p = $('#picplayer');
-                    var pics1 = [{ url: '../Images/banner1.jpg', link: 'http://www.jb51.net/#', time: 5000 }, { url: '../Images/banner2.jpg', link: 'http://www.jb51.net/#', time: 4000 },
+                    var pics1 = [{ url: 'Images/banner1.jpg', link: 'http://www.jb51.net/#', time: 5000 }, { url: 'Images/banner2.jpg', link: 'http://www.jb51.net/#', time: 4000 },
 { url: '../Images/banner3.jpg', link: 'http://www.jb51.net', time: 6000 }, { url: 'http://img.jb51.net/online/picPlayer/2.jpg', link: 'http://www.jb51.net', time: 6000 },
 { url: 'http://img.jb51.net/online/picPlayer/1.jpg', link: 'http://www.jb51.net', time: 6000}];
                     initPicPlayer(pics1, p.css('width').split('px')[0], p.css('height').split('px')[0]);

@@ -8,8 +8,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="../Styles/Style.css" rel="Stylesheet" type="text/css" />
-    <script src="../Scripts/jquery-1.2.6.js" type="text/javascript"/></script>
+    <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.2.6.js" type="text/javascript"/></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,7 +17,7 @@
         <uc1:Top ID="top1" runat="server" />
         <div class="index_top">
             <div class="index_top_left">
-                <div class="index_top_left_title"><a href="" target="_self"><img src="../Images/news.png" alt="" border="0" /></a></div>
+                 <div class="index_top_left_title"><div class="newstitle_more"><a href="" target="_self"><img src="Images/more.gif" alt="" border="0" align="absmiddle" /></a></div></div>
                 <div class="index_top_left_content">
                     <asp:DataList ID="dlstNews" runat="server">
                         <ItemTemplate>
@@ -29,7 +29,7 @@
                             </div>                            
                         </ItemTemplate>
                     </asp:DataList>
-                </div>
+                </div>                      
             </div>
             <div class="index_top_right">
                 <div class="index_top_right_title"></div>
@@ -37,7 +37,7 @@
                     <asp:DataList ID="dlstImage" runat="server">
                         <ItemTemplate>
                             <div class="dlstimage_area">
-                                <a href="<%#Eval("LinkUrl") %>" target="_self"><img src="<%#Eval("ImgUrl") %>" /></a><br />
+                                <a href="<%#Eval("LinkUrl") %>" target="_self"><img src="<%#Eval("ImgUrl") %>" width="100px" height="70px" /></a><br />
                                 <div class="dlstimage_text"><a href="<%#Eval("LinkUrl") %>" target="_self"><%#Eval("ImgName") %></a></div>
                             </div>
                         </ItemTemplate>
