@@ -46,7 +46,8 @@
             </tr>
             <tr>
                 <td></td>
-                <td><asp:Button ID="btnSubmit" runat="server" Text="提交回复" /></td>
+                <td><asp:Button ID="btnBack" runat="server" Text="返回" OnClientClick="javascript:history.go(-1)" />&nbsp;&nbsp;<asp:Button ID="btnSubmit" runat="server" Text="提交回复" 
+                        onclick="btnSubmit_Click" /></td>
             </tr>
         </table>
     </div>

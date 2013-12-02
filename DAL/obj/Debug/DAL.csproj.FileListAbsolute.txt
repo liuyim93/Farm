@@ -12,3 +12,10 @@ E:\Project\Farm\DAL\bin\Debug\Model.pdb
 E:\Project\Farm\DAL\obj\Debug\ResolveAssemblyReference.cache
 E:\Project\Farm\DAL\obj\Debug\DAL.dll
 E:\Project\Farm\DAL\obj\Debug\DAL.pdb
+F:\刘义铭\Project\Farm\DAL\bin\Debug\DAL.dll
+F:\刘义铭\Project\Farm\DAL\bin\Debug\DAL.pdb
+F:\刘义铭\Project\Farm\DAL\bin\Debug\Model.dll
+F:\刘义铭\Project\Farm\DAL\bin\Debug\Model.pdb
+F:\刘义铭\Project\Farm\DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\刘义铭\Project\Farm\DAL\obj\Debug\DAL.dll
+F:\刘义铭\Project\Farm\DAL\obj\Debug\DAL.pdb

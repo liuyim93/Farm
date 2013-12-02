@@ -8,3 +8,8 @@ E:\Project\Farm\Tools\bin\Debug\Tools.pdb
 E:\Project\Farm\Tools\obj\Debug\ResolveAssemblyReference.cache
 E:\Project\Farm\Tools\obj\Debug\Tools.dll
 E:\Project\Farm\Tools\obj\Debug\Tools.pdb
+F:\刘义铭\Project\Farm\Tools\bin\Debug\Tools.dll
+F:\刘义铭\Project\Farm\Tools\bin\Debug\Tools.pdb
+F:\刘义铭\Project\Farm\Tools\obj\Debug\ResolveAssemblyReference.cache
+F:\刘义铭\Project\Farm\Tools\obj\Debug\Tools.dll
+F:\刘义铭\Project\Farm\Tools\obj\Debug\Tools.pdb

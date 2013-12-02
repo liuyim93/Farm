@@ -40,6 +40,17 @@ namespace BLL
          }
 
          /// <summary>
+         /// 根据ID查询留言
+         /// </summary>
+         /// <param name="adviseId"></param>
+         /// <returns></returns>
+         public static List<Advise> GetAdvise(int adviseId) 
+         {
+             string sql = "select * from Advise where AdviseID="+adviseId;
+             return AdviseDal.GetAdvise(sql);
+         }
+
+         /// <summary>
          /// 修改回复
          /// </summary>
          /// <param name="adviseId"></param>

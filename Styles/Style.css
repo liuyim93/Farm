@@ -1,0 +1,6 @@
+﻿body {margin:0px; padding:0px;
+}
+ul{list-style:none;}
+
+/*index.aspx-首页*/
+#picplayer{width:740px;height:350px; cursor:pointer;position:relative;margin-top:5px;overflow:hidden;}
