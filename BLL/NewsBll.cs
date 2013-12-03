@@ -70,5 +70,25 @@ namespace BLL
         {
             return NewsDal.DeleteNews(newsId);
         }
+
+        /// <summary>
+        /// 查询最新的5条新闻动态
+        /// </summary>
+        /// <returns></returns>
+        public static List<News> GetNews_Top5() 
+        {
+            string sql = "select top 5 * from News where NewsTypeID=(select NewsTypeID from NewsType where TypeName='新闻动态') order by LoadTime desc";
+            return NewsDal.GetNews(sql);
+        }
+
+        /// <summary>
+        /// 查询最新的6条活动信息
+        /// </summary>
+        /// <returns></returns>
+        public static List<News> GetActivity_Top6() 
+        {
+            string sql = "select top 6 * from News where NewsTypeID=(select NewsTypeID from NewsType where TypeName='精彩活动') order by LoadTime desc";
+            return NewsDal.GetNews(sql);
+        }
     }
 }

@@ -69,5 +69,15 @@ namespace BLL
         {
             return ImageTypeDal.UpdateImageType(imgType);
         }
+
+        /// <summary>
+        /// 查询住宿设施分类
+        /// </summary>
+        /// <returns></returns>
+        public static List<ImageType> GetHouse() 
+        {
+            string sql = "select * from ImageType where ParentID=(select ImgTypeID from ImageType where TypeName='住宿设施')";
+            return ImageTypeDal.GetImageType(sql);
+        }
     }
 }

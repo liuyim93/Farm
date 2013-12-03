@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Bottom.ascx.cs" Inherits="UserControl_Bottom" %>
-<div>
-    <div>
-        <table>
+<div id="uc_bottom">
+    <div id="uc_bottom_content">
+        <table width="100%" height="100%">
             <tr>
                 <td><a href="" target="_self">关于我们</a>|
                     <a href="" target="_self">访客留言</a>|

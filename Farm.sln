@@ -19,7 +19,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Farm", ".", "{EFA8B247-74A7
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "4646"
+		VWDPort = "1636"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject

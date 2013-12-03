@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ContactUs.ascx.cs" Inherits="UserControl_ContactUs" %>
-<div>
-    <a  href="" target="_self"><img src="" alt="" width="100px" height="50px" /></a>
+<div id="contactus">
+    <a  href="" target="_self"><img src="Images/contactus.gif" alt="" width="210px" height="80px" /></a>
     <ul>
         <li>联系人：<asp:Label ID="lblLinkman" runat="server"></asp:Label></li>
         <li>电话：<asp:Label ID="lblPhone" runat="server"></asp:Label></li>

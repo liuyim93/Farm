@@ -48,6 +48,9 @@ namespace DAL
                     img.IsShow = Convert.ToInt32(row["IsShow"]);
                     img.Remark=row["Remark"].ToString();
                     img.LoadTime = Convert.ToDateTime(row["LoadTime"]);
+                    img.LinkUrl=row["LinkUrl"].ToString();
+                    img.IsHomeTopShow = Convert.ToInt32(row["IsHomeTopShow"]);
+                    img.IsHomeBottomShow = Convert.ToInt32(row["IsHomeBottomShow"]);
                     list.Add(img);
                 }
             }
@@ -85,6 +88,17 @@ namespace DAL
         {
             string sql = "delete from [Image] where ImgID=@ImgID";
             return SqlHelper.ExecuteNonQuery(CommandType.Text,sql,new OleDbParameter("@ImgID",imgId));
+        }
+
+        /// <summary>
+        /// 查询图片(datatable)
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns>返回表</returns>
+        public static DataTable GetImages(string sql) 
+        {
+            DataTable dt = SqlHelper.GetDs(sql).Tables[0];
+            return dt;
         }
     }
 }

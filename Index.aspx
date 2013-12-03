@@ -19,13 +19,13 @@
             <div class="index_top_left">
                  <div class="index_top_left_title"><div class="newstitle_more"><a href="" target="_self"><img src="Images/more.gif" alt="" border="0" align="absmiddle" /></a></div></div>
                 <div class="index_top_left_content">
-                    <asp:DataList ID="dlstNews" runat="server">
+                    <asp:DataList ID="dlstNews" runat="server" Width="100%">
                         <ItemTemplate>
                             <div class="dlstnews_area">
-                                <a href="" target="_self"><%#Eval("Detail") %></a>
                             <div class="dlstnews_area_time">
                                 <asp:Literal ID="ltlTime" runat="server" Text='<%#Eval("LoadTime") %>'></asp:Literal>
                             </div>
+                                <div class="dlstnews_area_text"><a href="" target="_self"><%#Eval("Detail") %></a></div>                            
                             </div>                            
                         </ItemTemplate>
                     </asp:DataList>
@@ -34,10 +34,10 @@
             <div class="index_top_right">
                 <div class="index_top_right_title"></div>
                 <div class="index_top_right_content">
-                    <asp:DataList ID="dlstImage" runat="server">
+                    <asp:DataList ID="dlstImage" runat="server" RepeatDirection="Horizontal" Width="100%">
                         <ItemTemplate>
-                            <div class="dlstimage_area">
-                                <a href="<%#Eval("LinkUrl") %>" target="_self"><img src="<%#Eval("ImgUrl") %>" width="100px" height="70px" /></a><br />
+                            <div class="dlstimage_area">                            
+                                <a href="<%#Eval("LinkUrl") %>" target="_self"><img src="<%#Eval("ImgUrl") %>" width="100px" height="70px" /></a><br />                                
                                 <div class="dlstimage_text"><a href="<%#Eval("LinkUrl") %>" target="_self"><%#Eval("ImgName") %></a></div>
                             </div>
                         </ItemTemplate>
@@ -49,11 +49,11 @@
             <div class="index_middle_left">
                 <div class="index_middle_left_title"></div>
                 <div class="index_middle_left_content">
-                    <asp:DataList ID="dlstActivity" runat="server">
+                    <asp:DataList ID="dlstActivity" runat="server" Width="100%">
                         <ItemTemplate>
                             <div class="dlstnews_area">
-                                <a href="" target="_self"><%#Eval("Title") %></a>
-                                <div class="dlstnews_time"><%#Eval("LoadTime") %></div>
+                                <div class="dlstnews_area_time"><%#Eval("LoadTime") %></div>
+                                <a href="" target="_self"><%#Eval("Title") %></a>                                
                             </div>
                         </ItemTemplate>
                     </asp:DataList>
@@ -65,23 +65,30 @@
                     <asp:Literal ID="ltlFarmIntro" runat="server"></asp:Literal>
                 </div>
             </div>
-            <uc3:ContactUs ID="contactus1" runat="server" />
+            <div style="float:left;width:210px;height:100%;">
+                <uc3:ContactUs ID="contactus1" runat="server" />
+            </div>
+            
         </div>
         <div class="index_bottom">
             <div class="index_bottom_title"></div>
             <div id="marquee">
                 <div style="width:800%;float:left;">
-                    <div id="marquee1">
+                    <div id="marquee1" style="float:left">
                         <asp:DataList ID="dlstMarquee" runat="server" RepeatDirection="Horizontal">
                             <ItemTemplate>
-                                <a href="" target="_self"><img src='<%#Eval("ImgUrl") %>' alt="" width="80px" height="80px" border="0" /></a>
+                                <div class="dlstmarquee_area">
+                                    <a href="" target="_self"><img src='<%#Eval("ImgUrl") %>' alt="" width="80px" height="80px" border="0" /></a>
+                                <div class="dlstmarquee_text"><a href="" target="_self"><%#Eval("ImgName") %></a></div>
+                                </div>                                
                             </ItemTemplate>
                         </asp:DataList>
                     </div>
                     <div id="marquee2" style="float:left"></div>
                 </div>                
             </div>
-        </div>        
+        </div>
+        <uc2:Bottom ID="bottom1" runat="server" />        
     </div>
     <script type="text/javascript">
         //文字滚动 

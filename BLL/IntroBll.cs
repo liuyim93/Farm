@@ -51,5 +51,25 @@ namespace BLL
         {
             return IntroDal.UpdateIntro(intro);
         }
+
+        /// <summary>
+        /// 查询农庄简介
+        /// </summary>
+        /// <returns></returns>
+        public static List<Intro> GetFarmIntro() 
+        {
+            string sql = "select * from Intro where IntroTypeID=(select IntroTypeID from IntroType where TypeName='农庄简介')";
+            return IntroDal.GetIntro(sql);
+        }
+
+        /// <summary>
+        /// 查询联系我们
+        /// </summary>
+        /// <returns></returns>
+        public static List<Intro> GetContactUs() 
+        {
+            string sql = "select * from Intro where IntroTypeID=(select IntroTypeID from IntroType where TypeName='联系我们')";
+            return IntroDal.GetIntro(sql);
+        }
     }
 }

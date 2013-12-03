@@ -15,5 +15,8 @@ namespace Model
         public int IsShow { get; set; }
         public string Remark { get; set; }
         public DateTime LoadTime { get; set; }
+        public int IsHomeTopShow { get; set; }
+        public string LinkUrl { get; set; }
+        public int IsHomeBottomShow { get; set; }
     }
 }

@@ -7,9 +7,9 @@
         <ul>
             <li><a href="Index.aspx" target="_self">首页</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
-            <li><a href="" target="_self">农家简介</a></li>
+            <li><a href="FarmIntro.aspx" target="_self">农家简介</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
-            <li><a href="" target="_self">住宿设施</a></li>
+            <li><a href="House_Default.aspx" target="_self">住宿设施</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
             <li><a href="" target="_self">农家菜肴</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
