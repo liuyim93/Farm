@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Model;
 using DAL;
+using System.Data;
 
 namespace BLL
 {
@@ -89,6 +90,16 @@ namespace BLL
         {
             string sql = "select top 6 * from News where NewsTypeID=(select NewsTypeID from NewsType where TypeName='精彩活动') order by LoadTime desc";
             return NewsDal.GetNews(sql);
+        }
+
+        /// <summary>
+        /// 查询所有的新闻动态
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetAllnews() 
+        {
+            string sql = "select * from News order by LoadTime desc";
+            return NewsDal.Getnews(sql);
         }
     }
 }

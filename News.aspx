@@ -36,7 +36,7 @@
                         <Webdiyer:AspNetPager ID="AspNetPager1" runat="server" CssClass="paginator" 
                             CurrentPageButtonClass="cpb" LastPageText="尾页" 
                         FirstPageText="首页" NextPageText="下一页" PrevPageText="上一页" AlwaysShow="true" 
-                            PageSize="9" UrlPaging="true" onpagechanged="AspNetPager1_PageChanged"></Webdiyer:AspNetPager>
+                            UrlPaging="true" onpagechanged="AspNetPager1_PageChanged"></Webdiyer:AspNetPager>
                     </div>
                 </div>
             </div>

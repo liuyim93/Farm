@@ -82,5 +82,16 @@ namespace DAL
             string sql = "delete from News where NewsID=@NewsID";
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@NewsID", newsId));
         }
+
+        /// <summary>
+        /// 查询新闻（datatable）
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns>datatable</returns>
+        public static DataTable Getnews(string sql) 
+        {
+            DataTable dt=SqlHelper.GetDs(sql).Tables[0];
+            return dt;
+        }
     }
 }

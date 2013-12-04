@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NewsMenu.ascx.cs" Inherits="UserControl_NewsMenu" %>
 <div class="intromenu">
-    <div class="intromenu_title"></div>
+    <div class="intromenu_title">新闻动态</div>
     <ul>
         <asp:DataList ID="dlstNewsMenu" runat="server">
             <ItemTemplate>
