@@ -43,7 +43,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Advise.cs" />
     <Compile Include="FarmInfo.cs" />
-    <Compile Include="Image.cs" />
+    <Compile Include="image.cs" />
     <Compile Include="ImageType.cs" />
     <Compile Include="Intro.cs" />
     <Compile Include="IntroType.cs" />

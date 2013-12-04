@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    public class Image
+    public class image
     {
         public int ImgID { get; set; }
         public string ImgName { get; set; }

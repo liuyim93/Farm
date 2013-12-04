@@ -11,9 +11,9 @@
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
             <li><a href="House_Default.aspx" target="_self">住宿设施</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
-            <li><a href="" target="_self">农家菜肴</a></li>
+            <li><a href="Food.aspx" target="_self">农家菜肴</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
-            <li><a href="" target="_self">农家娱乐</a></li>
+            <li><a href="Fun.aspx" target="_self">农家娱乐</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
             <li><a href="" target="_self">农家荣誉</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>

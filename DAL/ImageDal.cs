@@ -15,7 +15,7 @@ namespace DAL
         /// </summary>
         /// <param name="img"></param>
         /// <returns></returns>
-        public static int AddImage(Image img)
+        public static int AddImage(image img)
         {
             string sql = "insert into [Image] (ImgName,ImgUrl,Remark,AdminID,ImgTypeID,IsShow,LoadTime)values(@ImgName,@ImgUrl,@Remark,@AdminID,@ImgTypeID,@IsShow,@LoadTime)";
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@ImgName", img.ImgName),
@@ -32,15 +32,15 @@ namespace DAL
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static List<Image> GetImage(string sql)
+        public static List<image> GetImage(string sql)
         {
-            List<Image> list = new List<Image>();
+            List<image> list = new List<image>();
             DataSet ds = SqlHelper.GetDs(sql);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    Image img = new Image();
+                    image img = new image();
                     img.ImgID = Convert.ToInt32(row["ImgID"]);
                     img.ImgName=row["ImgName"].ToString();
                     img.ImgUrl=row["ImgUrl"].ToString();
@@ -73,7 +73,7 @@ namespace DAL
         //        new OleDbParameter("@IsShow", img.IsShow));
         //}
 
-        public static int UpdateImage(Image img) 
+        public static int UpdateImage(image img) 
         {
             string sql = "update [Image] set ImgName='"+img.ImgName+"',ImgUrl='"+img.ImgUrl+"',Remark='"+img.Remark+"',AdminID="+img.AdminID+",ImgTypeID="+img.ImgTypeID+",IsShow="+img.IsShow+" where ImgID="+img.ImgID;
             return SqlHelper.DoSql(sql);

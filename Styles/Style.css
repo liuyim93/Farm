@@ -1,6 +1,7 @@
 ﻿body {margin:0px; padding:0px;font-size:12px;
 }
 ul{list-style:none;}
+a{ text-decoration:none; color:#000000;}
 a:hover{color:#ffff00;}
 
 /*top.ascx*/
@@ -12,11 +13,13 @@ a:hover{color:#ffff00;}
 .uc_top_menu a:hover{color:#ffff00;}
 /*contactus.ascx*/
 #contactus{width:210px;height:200px;border:none;}
+#contactus_text{width:208px;height:120px;border:1px solid #e4e4e4;}
 #contactus ul{list-style:none;}
 #contactus ul li{text-align:left;height:20px;line-height:20px;}
 /*bottom.ascx*/
 #uc_bottom{width:980px;height:80px;margin:0px auto;border-top:1px solid #e4e4e4;}
 #uc_bottom_content{margin:5px; text-align:center;}
+.bottom{width:100%;float:left;}
 /*intromenu.ascx*/
 .intromenu{width:210px;min-height:150px; border:1px solid #e4e4e4;margin-bottom:10px;}
 .intromenu_title{height:30px;background:url("../Images/menu_bg.png") repeat-x scroll;font-size:14px;padding-left:15px;line-height:30px;color:#006629; font-weight:bold;}
@@ -66,3 +69,8 @@ a:hover{color:#ffff00;}
 .farmintro_right_title{height:30px;line-height:30px;padding-left:60px;background:url("../Images/intro_title_bg.png") no-repeat scroll;}
 .farmintro_right_content{margin-top:10px;width:100%;border:1px solid #e4e4e4;}
 .farmintro_right_detail{width:90%;height:90%;margin:5px auto;}
+.house_area{width:190px;height:170px;margin-right:10px;}
+.house_area_text{width:100%;text-align:center;height:20px;line-height:20px;}
+.housedetail_title{height:30px;line-height:30px;font-size:14px;width:100%;text-align:center;font-weight:bold;margin:5px auto;}
+.housedetail_time{width:100%;text-align:center;height:25px;line-height:25px;border-bottom:1px dotted #e4e4e4;}
+.housedetail_img{width:95%;height:95%;padding:10px 30px;}

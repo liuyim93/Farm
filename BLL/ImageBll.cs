@@ -15,7 +15,7 @@ namespace BLL
         /// </summary>
         /// <param name="img"></param>
         /// <returns></returns>
-        public static int AddImage(Image img) 
+        public static int AddImage(image img) 
         {
             return ImageDal.AddImage(img);
         }
@@ -24,7 +24,7 @@ namespace BLL
         /// 查询所有的图片
         /// </summary>
         /// <returns></returns>
-        public static List<Image> GetAllImage() 
+        public static List<image> GetAllImage() 
         {
             string sql = "select * from [Image] order by LoadTime desc";
             return ImageDal.GetImage(sql);
@@ -35,7 +35,7 @@ namespace BLL
         /// </summary>
         /// <param name="imgId"></param>
         /// <returns></returns>
-        public static List<Image> GetImage(int imgId) 
+        public static List<image> GetImage(int imgId) 
         {
             string sql = "select * from [Image] where ImgID="+imgId;
             return ImageDal.GetImage(sql);
@@ -46,7 +46,7 @@ namespace BLL
         /// </summary>
         /// <param name="img"></param>
         /// <returns></returns>
-        public static int UpdateImage(Image img) 
+        public static int UpdateImage(image img) 
         {
             return ImageDal.UpdateImage(img);
         }
@@ -65,7 +65,7 @@ namespace BLL
         /// 查询首页顶部5张图片
         /// </summary>
         /// <returns></returns>
-        public static List<Image> GetHomeTopImage_Top5() 
+        public static List<image> GetHomeTopImage_Top5() 
         {
             string sql = "select top 5 * from [Image] where IsHomeTopShow=1";
             return ImageDal.GetImage(sql);
@@ -75,7 +75,7 @@ namespace BLL
         /// 查询首页底部10张图片
         /// </summary>
         /// <returns></returns>
-        public static List<Image> GetHomeBottomImage_Top10() 
+        public static List<image> GetHomeBottomImage_Top10() 
         {
             string sql = "select top 10 * from [Image] where IsHomeBottomShow=1";
             return ImageDal.GetImage(sql);
@@ -88,6 +88,61 @@ namespace BLL
         public static DataTable GetAllHouseImage() 
         {
             string sql = "select * from [Image] where ImgTypeID in (select ImgTypeID from ImageType where ParentID=(select ImgTypeID from ImageType where TypeName='住宿设施'))";
+            return ImageDal.GetImages(sql);
+        }
+
+        /// <summary>
+        /// 根据图片分类ID查询图片(datatable)
+        /// </summary>
+        /// <param name="imgTypeId"></param>
+        /// <returns></returns>
+        public static DataTable GetImagebyImgTypeId(int imgTypeId) 
+        {
+            string sql = "select * from [Image] where ImgTypeID="+imgTypeId;
+            return ImageDal.GetImages(sql);
+        }
+
+        /// <summary>
+        /// 根据图片分类、图片ID查询上一张图片
+        /// </summary>
+        /// <param name="imgTypeId"></param>
+        /// <param name="imgId"></param>
+        /// <returns></returns>
+        public static List<image> GetPrevImage(int imgTypeId,int imgId) 
+        {
+            string sql = "select * from [Image] where ImgID<"+imgId+" and ImgTypeID="+imgTypeId;
+            return ImageDal.GetImage(sql);
+        }
+
+        /// <summary>
+        /// 查询下一张图片
+        /// </summary>
+        /// <param name="imgTypeId"></param>
+        /// <param name="imgId"></param>
+        /// <returns></returns>
+        public static List<image> GetNextImage(int imgTypeId,int imgId) 
+        {
+            string sql = "select * from [Image] where ImgID>"+imgId+" and ImgTypeID="+imgTypeId;
+            return ImageDal.GetImage(sql);
+        }
+
+        /// <summary>
+        /// 查询所有的农家菜肴图片
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetAllFood() 
+        {
+            string sql = "select * from [Image] where ImgTypeID=(select ImgTypeID from ImageType where TypeName='农家菜肴')";
+            return ImageDal.GetImages(sql);
+        }
+
+        /// <summary>
+        /// 查询所有的农家娱乐图片
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetAllFun() 
+        {
+            string sql = "select * from [Image] where ImgTypeID in (select ImgTypeID from ImageType where ParentID=(select ImgTypeID from ImageType where TypeName='农家娱乐'))";
             return ImageDal.GetImages(sql);
         }
     }

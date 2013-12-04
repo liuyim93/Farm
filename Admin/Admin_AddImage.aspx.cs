@@ -83,7 +83,7 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
         }
         else 
         {
-            Model.Image img = new Model.Image();
+            Model.image img = new Model.image();
             img.ImgName = txtImgName.Text.Trim();
             img.ImgUrl = hfImgUrl.Value;
             img.LoadTime = DateTime.Now;
@@ -169,7 +169,7 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
         {
             case "change":
                 int imgId = Convert.ToInt32(e.CommandArgument);
-                List<Model.Image> list = ImageBll.GetImage(imgId);
+                List<Model.image> list = ImageBll.GetImage(imgId);
                 txtImgName.Text=list[0].ImgName;
                 txtRemark.Text=list[0].Remark;
                 hfImgID.Value=list[0].ImgID.ToString();

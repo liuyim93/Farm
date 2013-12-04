@@ -79,5 +79,25 @@ namespace BLL
             string sql = "select * from ImageType where ParentID=(select ImgTypeID from ImageType where TypeName='住宿设施')";
             return ImageTypeDal.GetImageType(sql);
         }
+
+        /// <summary>
+        /// 查询农家菜肴分类
+        /// </summary>
+        /// <returns></returns>
+        public static List<ImageType> GetFood() 
+        {
+            string sql = "select * from ImageType where ParentID=(select ImgTypeID from ImageType where TypeName='农家菜肴')";
+            return ImageTypeDal.GetImageType(sql);
+        }
+
+        /// <summary>
+        /// 查询农家娱乐分类
+        /// </summary>
+        /// <returns></returns>
+        public static List<ImageType> GetFun() 
+        {
+            string sql = "select * from ImageType where ParentID=(select ImgTypeID from ImageType where TypeName='农家娱乐')";
+            return ImageTypeDal.GetImageType(sql);
+        }
     }
 }

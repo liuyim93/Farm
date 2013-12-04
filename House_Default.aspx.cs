@@ -40,6 +40,24 @@ public partial class House_Default : System.Web.UI.Page
     }
     protected void dlstImage_ItemDataBound(object sender, DataListItemEventArgs e)
     {
-
+        if (e.Item.ItemType==ListItemType.Item||e.Item.ItemType==ListItemType.AlternatingItem)
+        {
+            Image img = e.Item.FindControl("imgHouse") as Image;
+            string imgUrls = img.ImageUrl;
+            string[] ImgUrl = imgUrls.Split('/');
+            string urlStr = string.Empty;
+            for (int i = 0; i < ImgUrl.Length; i++)
+            {
+                if (i != 0 && i != ImgUrl.Length - 1)
+                {
+                    urlStr += ImgUrl[i] + "/";
+                }
+                else if(i==ImgUrl.Length-1) 
+                {
+                    urlStr+=ImgUrl[i];
+                }
+            }
+            img.ImageUrl = urlStr;
+        }
     }
 }

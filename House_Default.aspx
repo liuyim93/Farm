@@ -22,28 +22,28 @@
                 <uc3:ContactUs ID="contactus1" runat="server" />
             </div>
             <div class="farmintro_right">
-                <div class="farmintro_right_title">您目前的位置：<a href="../Index.aspx" target="_self">首页</a>>住宿设施</div>
+                <div class="farmintro_right_title">您目前的位置：<a href="Index.aspx" target="_self">首页</a>>住宿设施</div>
                 <div class="farmintro_right_content">
                     <div class="farmintro_right_detail">
                         <asp:DataList ID="dlstImage" runat="server" RepeatColumns="5" 
                             onitemdatabound="dlstImage_ItemDataBound" Width="100%">
                             <ItemTemplate>
                                 <div class="house_area">
-                                    <a href="" target="_self"><asp:Image ID="imgHouse" runat="server" ImageUrl='<%#Eval("ImgUrl") %>' Width="80px" Height="80px" /></a>
-                                    <div class="house_area_text"><%#Eval("ImgName") %></div>
+                                    <a href="House_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="imgHouse" runat="server" ImageUrl='<%#Eval("ImgUrl") %>' Width="188px" Height="150px" /></a>
+                                    <div class="house_area_text"><a href="House_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><%#Eval("ImgName") %></a></div>
                                 </div>
                             </ItemTemplate>
                         </asp:DataList>
                         <Webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="20" 
                             AlwaysShow="true" LastPageText="尾页"
                          FirstPageText="首页" NextPageText="下一页" PrevPageText="上一页" CssClass="paginator" 
-                            UrlPaging="true" onpagechanged="AspNetPager1_PageChanged" CurrentPageButtonClass="cpb">                            
+                            UrlPaging="true" onpagechanged="AspNetPager1_PageChanged" CurrentPageButtonClass="cpb">
                         </Webdiyer:AspNetPager>
                     </div>
                 </div>
             </div>
         </div>
-        <div style="width:100%;float:left;">
+        <div  class="bottom">
             <uc2:Bottom ID="bottom1" runat="server" />
         </div>        
     </div>

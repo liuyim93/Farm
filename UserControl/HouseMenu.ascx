@@ -4,7 +4,7 @@
     <ul>
         <asp:DataList ID="dlstHouse" runat="server" Width="100%">
             <ItemTemplate>
-                <li><a href="" target="_self"><%#Eval("TypeName") %></a></li>
+                <li><a href="House_Search.aspx?typeId=<%#Eval("ImgTypeID") %>" target="_self"><%#Eval("TypeName") %></a></li>
             </ItemTemplate>
         </asp:DataList>
     </ul>
