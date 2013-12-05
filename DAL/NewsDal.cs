@@ -93,5 +93,16 @@ namespace DAL
             DataTable dt=SqlHelper.GetDs(sql).Tables[0];
             return dt;
         }
+
+        /// <summary>
+        /// 修改点击量
+        /// </summary>
+        /// <param name="newsId"></param>
+        /// <returns></returns>
+        public static int UpdateClickNum(int newsId) 
+        {
+            string sql = "update News set ClickNum=ClickNum+1 where NewsID=" + newsId;
+            return SqlHelper.DoSql(sql);
+        }
     }
 }

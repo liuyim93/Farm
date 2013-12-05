@@ -88,6 +88,7 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
             img.ImgUrl = hfImgUrl.Value;
             img.LoadTime = DateTime.Now;
             img.Remark = txtRemark.Text;
+            img.LinkUrl = txtLinkUrl.Text.Trim();
             img.AdminID=Convert.ToInt32(Session["AdminID"]);
             if (chkShow.Checked)
             {
@@ -97,7 +98,22 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
             {
                 img.IsShow = 0;
             }
-
+            if (chkTopShow.Checked)
+            {
+                img.IsHomeTopShow = 1;
+            }
+            else 
+            {
+                img.IsHomeTopShow = 0;
+            }
+            if (chkBottomShow.Checked)
+            {
+                img.IsHomeBottomShow = 1;
+            }
+            else 
+            {
+                img.IsHomeBottomShow = 0;
+            }
             if (drop3.SelectedIndex == -1)
             {
                 if (drop2.SelectedItem.Text != "请选择分类")
@@ -174,6 +190,23 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
                 txtRemark.Text=list[0].Remark;
                 hfImgID.Value=list[0].ImgID.ToString();
                 hfImgUrl.Value=list[0].ImgUrl;
+                txtLinkUrl.Text=list[0].LinkUrl;
+                if (list[0].IsHomeTopShow == 1)
+                {
+                    chkTopShow.Checked = true;
+                }
+                else 
+                {
+                    chkTopShow.Checked = false;
+                }
+                if (list[0].IsHomeBottomShow == 1)
+                {
+                    chkBottomShow.Checked = true;
+                }
+                else 
+                {
+                    chkBottomShow.Checked = false;
+                }
                 if (list[0].IsShow == 1)
                 {
                     chkShow.Checked = true;

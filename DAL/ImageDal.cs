@@ -17,14 +17,17 @@ namespace DAL
         /// <returns></returns>
         public static int AddImage(image img)
         {
-            string sql = "insert into [Image] (ImgName,ImgUrl,Remark,AdminID,ImgTypeID,IsShow,LoadTime)values(@ImgName,@ImgUrl,@Remark,@AdminID,@ImgTypeID,@IsShow,@LoadTime)";
+            string sql = "insert into [Image] (ImgName,ImgUrl,Remark,AdminID,ImgTypeID,IsShow,LoadTime,LinkUrl,IsHomeTopShow,IsHomeBottomShow)values(@ImgName,@ImgUrl,@Remark,@AdminID,@ImgTypeID,@IsShow,@LoadTime,@LinkUrl,@IsHomeTopShow,@IsHomeBottomShow)";
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@ImgName", img.ImgName),
                 new OleDbParameter("@ImgUrl", img.ImgUrl),
                 new OleDbParameter("@Remark", img.Remark),
                 new OleDbParameter("@AdminID", img.AdminID),
                 new OleDbParameter("@ImgTypeID", img.ImgTypeID),
                 new OleDbParameter("@IsShow", img.IsShow),
-                new OleDbParameter("@LoadTime", img.LoadTime.ToString("yyyy-MM-dd hh:mm:ss")));
+                new OleDbParameter("@LoadTime", img.LoadTime.ToString("yyyy-MM-dd hh:mm:ss")),
+                new OleDbParameter("@LinkUrl",img.LinkUrl),
+                new OleDbParameter("@IsHomeTopShow",img.IsHomeTopShow),
+                new OleDbParameter("@IsHomeBottomShow",img.IsHomeBottomShow));
         }
 
         /// <summary>
@@ -75,7 +78,7 @@ namespace DAL
 
         public static int UpdateImage(image img) 
         {
-            string sql = "update [Image] set ImgName='"+img.ImgName+"',ImgUrl='"+img.ImgUrl+"',Remark='"+img.Remark+"',AdminID="+img.AdminID+",ImgTypeID="+img.ImgTypeID+",IsShow="+img.IsShow+" where ImgID="+img.ImgID;
+            string sql = "update [Image] set ImgName='"+img.ImgName+"',ImgUrl='"+img.ImgUrl+"',Remark='"+img.Remark+"',AdminID="+img.AdminID+",ImgTypeID="+img.ImgTypeID+",IsShow="+img.IsShow+",LinkUrl='"+img.LinkUrl+"',IsHomeTopShow="+img.IsHomeTopShow+",IsHomeBottomShow="+img.IsHomeBottomShow+" where ImgID="+img.ImgID;
             return SqlHelper.DoSql(sql);
         }
 

@@ -37,6 +37,7 @@ public partial class Food_Detail : System.Web.UI.Page
                 if (list_prev.Count > 0)
                 {
                     lbtnPrev.Text = list_prev[0].ImgName;
+                    hfPrevImgID.Value=list_prev[0].ImgID.ToString();
                 }
                 else 
                 {
@@ -46,6 +47,7 @@ public partial class Food_Detail : System.Web.UI.Page
                 if (list_next.Count>0)
                 {
                     lbtnNext.Text=list_next[0].ImgName;
+                    hfNextImgID.Value=list_next[0].ImgID.ToString();
                 }else
                 {
                     lbtnNext.Text = "没有了";

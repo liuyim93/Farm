@@ -15,13 +15,15 @@
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
             <li><a href="Fun.aspx" target="_self">农家娱乐</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
-            <li><a href="" target="_self">农家荣誉</a></li>
+            <li><a href="ImageList.aspx?id=14" target="_self">农家荣誉</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
-            <li><a href="" target="_self">周边景点</a></li>
+            <li><a href="ImageList.aspx?id=15" target="_self">周边景点</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
-            <li><a href="" target="_self">最新动态</a></li>
+            <li><a href="News.aspx" target="_self">最新动态</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
-            <li><a href="" target="_self">联系我们</a></li>
+            <li><a href="Advise.aspx" target="_self">访客留言</a></li>
+            <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
+            <li><a href="ContactUs.aspx" target="_self">联系我们</a></li>
         </ul>
     </div>
     <div id="picplayer">        

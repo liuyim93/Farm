@@ -17,14 +17,15 @@ namespace DAL
         /// <returns></returns>
         public static int AddAdvise(Advise advise) 
         {
-            string sql = "insert into Advise (RealName,Title,Phone,Email,Detail,Reply,LoadTime)values(@RealName,@Title,@Phone,@Email,@Detail,@Reply,@LoadTime)";
+            string sql = "insert into Advise (RealName,Title,Phone,Email,Detail,Reply,LoadTime,IPAdress)values(@RealName,@Title,@Phone,@Email,@Detail,@Reply,@LoadTime,@IPAdress)";
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@RealName", advise.RealName),
                 new OleDbParameter("@Title", advise.Title),
                 new OleDbParameter("@Phone", advise.Phone),
                 new OleDbParameter("@Email", advise.Email),
                 new OleDbParameter("@Detail", advise.Detail),
                 new OleDbParameter("@Reply", advise.Reply),
-                new OleDbParameter("@LoadTime", advise.LoadTime));
+                new OleDbParameter("@LoadTime", advise.LoadTime),
+                new OleDbParameter("@IPAdress",advise.IPAdress));
         }
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace DAL
                     advise.Detail=row["Detail"].ToString();
                     advise.Reply=row["Reply"].ToString();
                     advise.LoadTime=row["LoadTime"].ToString();
+                    advise.IPAdress=row["IPAdress"].ToString();
                     list.Add(advise);
                 }
             }
@@ -77,6 +79,17 @@ namespace DAL
         {
             string sql = "delete from Advise where AdviseID=@AdviseID";
             return SqlHelper.ExecuteNonQuery(CommandType.Text,sql,new OleDbParameter("@AdviseID",adviseId));
+        }
+
+        /// <summary>
+        /// 查询留言(datatable)
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns>datatable</returns>
+        public static DataTable Getadvise(string sql)
+        {
+            DataTable dt=SqlHelper.GetDs(sql).Tables[0];
+            return dt;
         }
     }
 }

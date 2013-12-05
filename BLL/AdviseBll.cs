@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DAL;
 using Model;
+using System.Data;
 
 namespace BLL
 {
@@ -69,6 +70,26 @@ namespace BLL
          public static int DeleteAdvise(int adviseId) 
          {
              return AdviseDal.DeleteAdvise(adviseId);
+         }
+
+         /// <summary>
+         /// 查询已回复的留言
+         /// </summary>
+         /// <returns></returns>
+         public static DataTable GetadivseReplyed() 
+         {
+             string sql = "select * from Advise where Reply<>''";
+             return AdviseDal.Getadvise(sql);
+         }
+
+         /// <summary>
+         /// 查询未回复的留言
+         /// </summary>
+         /// <returns></returns>
+         public static DataTable GetadviseUnReply() 
+         {
+             string sql = "select * from Advise where Reply=''";
+             return AdviseDal.Getadvise(sql);
          }
     }
 }

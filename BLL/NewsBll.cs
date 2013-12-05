@@ -101,5 +101,50 @@ namespace BLL
             string sql = "select * from News order by LoadTime desc";
             return NewsDal.Getnews(sql);
         }
+
+        /// <summary>
+        /// 根据新闻类型查询新闻动态
+        /// </summary>
+        /// <param name="newsTypeId"></param>
+        /// <returns></returns>
+        public static DataTable GetnewsbyTypeId(int newsTypeId) 
+        {
+            string sql = "select * from News where NewsTypeID="+newsTypeId;
+            return NewsDal.Getnews(sql);
+        }
+
+        /// <summary>
+        /// 修改点击量
+        /// </summary>
+        /// <param name="newsId"></param>
+        /// <returns></returns>
+        public static int UpdateClickNum(int newsId) 
+        {
+            return NewsDal.UpdateClickNum(newsId);            
+        }
+
+        /// <summary>
+        /// 查询上一条新闻
+        /// </summary>
+        /// <param name="newsTypeId"></param>
+        /// <param name="newsId"></param>
+        /// <returns></returns>
+        public static List<News> GetPrevNews(int newsTypeId,int newsId) 
+        {
+            string sql = "select top 1 * from News where NewsID<"+newsId+" and NewsTypeID="+newsTypeId;
+            return NewsDal.GetNews(sql);
+        }
+
+        /// <summary>
+        /// 查询下一条新闻
+        /// </summary>
+        /// <param name="newsTypeId"></param>
+        /// <param name="newsId"></param>
+        /// <returns></returns>
+        public static List<News> GetNextNews(int newsTypeId,int newsId)
+        {
+            string sql = "select top 1 * from News where NewsID>" + newsId + " and NewsTypeID=" + newsTypeId;
+            return NewsDal.GetNews(sql);
+        }
     }
 }

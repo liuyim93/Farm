@@ -15,5 +15,6 @@ namespace Model
         public string LoadTime { get; set; }
         public string Phone { get; set; }
         public string Reply { get; set; }
+        public string IPAdress { get; set; }
     }
 }

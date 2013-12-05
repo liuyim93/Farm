@@ -35,6 +35,11 @@
                             <td></td>
                         </tr>
                         <tr>
+                            <td>链接地址：</td>
+                            <td><asp:TextBox ID="txtLinkUrl" runat="server"></asp:TextBox></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td>上传图片：</td>
                             <td>
                                 <asp:FileUpload ID="fileupload1" runat="server" />&nbsp;&nbsp;
@@ -48,6 +53,16 @@
                         <tr>
                             <td>是否显示：</td>
                             <td><asp:CheckBox ID="chkShow" runat="server" /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>首页顶部显示：</td>
+                            <td><asp:CheckBox ID="chkTopShow" runat="server" /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>首页底部显示：</td>
+                            <td><asp:CheckBox ID="chkBottomShow" runat="server" /></td>
                             <td></td>
                         </tr>
                         <tr>
