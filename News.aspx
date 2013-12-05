@@ -27,9 +27,8 @@
                     <div class="farmintro_right_detail">
                         <asp:DataList ID="dlstNews" runat="server" Width="100%">
                             <ItemTemplate>
-                                <div class="news_area">
-                                    <div class="news_area_time"><%#Eval("LoadTime") %></div>
-                                    <a href="News_Detail.aspx?id=<%#Eval("NewsID") %>" target="_self"><%#Eval("Title") %></a>
+                                <div class="news_area">                                    
+                                    <a href="News_Detail.aspx?id=<%#Eval("NewsID") %>" target="_self"><img src="Images/news_before.jpg" alt="" border="0" />&nbsp;<%#Eval("Title") %></a>
                                 </div>
                             </ItemTemplate>
                         </asp:DataList>

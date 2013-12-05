@@ -46,8 +46,8 @@
             <div>留言管理</div>
             <div>
                 <ul>
-                    <li><a href="" target="main">待回复</a></li>
-                    <li><a href="" target="main">已回复</a></li>
+                    <li><a href="Admin_AdviseUnReply.aspx" target="main">待回复</a></li>
+                    <li><a href="Admin_AdviseReplyed.aspx" target="main">已回复</a></li>
                 </ul>
             </div>
         </div>

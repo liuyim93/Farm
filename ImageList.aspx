@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="bottom">
             <uc2:Bottom ID="bottom1" runat="server" />
         </div>
     </div>

@@ -25,17 +25,17 @@
                 <div class="farmintro_right_title">您目前的位置：<a href="Index.aspx" target="_self">首页</a>><a href="Advise.aspx" target="_self">访客留言</a></div>
                 <div class="farmintro_right_content">
                     <div class="farmintro_right_detail">
-                        <div><a href="Advise.aspx" target="_self">访客留言</a>|<a href="AdviseList.aspx" target="_self">查看留言</a></div>
-                        <div>
+                        <div class="advise_choice"><a href="Advise.aspx" target="_self">访客留言</a>|<a href="AdviseList.aspx" target="_self">查看留言</a></div>
+                        <div class="advise_content">
                             <asp:DataList ID="dlstAdvise" runat="server" Width="100%">
                                 <ItemTemplate>
-                                    <div>
-                                        <div>
-                                            <div>留言日期：<asp:Literal ID="ltlTime" runat="server" Text='<%#Eval("LoadTime") %>'></asp:Literal></div>
+                                    <div class="advise_area">
+                                        <div class="advise_area_top">
+                                            <div class="advise_area_time">留言日期：<asp:Literal ID="ltlTime" runat="server" Text='<%#Eval("LoadTime") %>'></asp:Literal></div>
                                             留言人：<asp:Label ID="lblRealName" runat="server" Text='<%#Eval("RealName") %>'></asp:Label>
                                         </div>
-                                        <div>留言内容：<asp:Label ID="lblDetail" runat="server" Text='<%#Eval("Detail") %>'></asp:Label></div>
-                                        <div>回复：<asp:Label ID="lblReply" runat="server" Text='<%#Eval("Reply") %>'></asp:Label></div>
+                                        <div class="advise_area_detail">留言内容：<asp:Label ID="lblDetail" runat="server" Text='<%#Eval("Detail") %>'></asp:Label></div>
+                                        <div class="advise_area_reply">回复：<asp:Label ID="lblReply" runat="server" Text='<%#Eval("Reply") %>'></asp:Label></div>
                                     </div>
                                 </ItemTemplate>
                             </asp:DataList>

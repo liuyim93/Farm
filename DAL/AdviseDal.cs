@@ -71,6 +71,18 @@ namespace DAL
         }
 
         /// <summary>
+        /// 回复留言
+        /// </summary>
+        /// <param name="adviseId"></param>
+        /// <param name="reply"></param>
+        /// <returns></returns>
+        public static int Updateadvise(int adviseId,string reply) 
+        {
+            string sql = "update Advise set Reply='"+reply+"' where AdviseID="+adviseId;
+            return SqlHelper.DoSql(sql);
+        }
+
+        /// <summary>
         /// 删除留言
         /// </summary>
         /// <param name="adviseId"></param>

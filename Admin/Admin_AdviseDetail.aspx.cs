@@ -58,7 +58,7 @@ public partial class Admin_Admin_AdviseDetail : System.Web.UI.Page
         else 
         {
             int adviseId = Convert.ToInt32(Request.QueryString["id"]);
-            AdviseBll.UpdateAdvise(adviseId,txtReply.Text);
+            AdviseBll.Updateadvise(adviseId,txtReply.Text);
             MessageBox.Alert("修改成功！",Page);
             Bind();
         }

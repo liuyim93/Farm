@@ -91,5 +91,16 @@ namespace BLL
              string sql = "select * from Advise where Reply=''";
              return AdviseDal.Getadvise(sql);
          }
+
+         /// <summary>
+         /// 回复留言
+         /// </summary>
+         /// <param name="adviseId"></param>
+         /// <param name="reply"></param>
+         /// <returns></returns>
+         public static int Updateadvise(int adviseId,string reply) 
+         {
+             return AdviseDal.Updateadvise(adviseId,reply);
+         }
     }
 }

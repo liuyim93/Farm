@@ -25,7 +25,7 @@
                 <div class="farmintro_right_title">您目前的位置：<a href="Index.aspx" target="_self">首页</a>>住宿设施</div>
                 <div class="farmintro_right_content">
                     <div class="farmintro_right_detail">
-                        <asp:DataList ID="dlstImage" runat="server" RepeatColumns="5" 
+                        <asp:DataList ID="dlstImage" runat="server" RepeatColumns="3" 
                             onitemdatabound="dlstImage_ItemDataBound" Width="100%">
                             <ItemTemplate>
                                 <div class="house_area">
@@ -34,7 +34,7 @@
                                 </div>
                             </ItemTemplate>
                         </asp:DataList>
-                        <Webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="20" 
+                        <Webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="9" 
                             AlwaysShow="true" LastPageText="尾页"
                          FirstPageText="首页" NextPageText="下一页" PrevPageText="上一页" CssClass="paginator" 
                             UrlPaging="true" onpagechanged="AspNetPager1_PageChanged" CurrentPageButtonClass="cpb">

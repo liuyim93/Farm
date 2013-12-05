@@ -23,6 +23,9 @@ public partial class Advise : System.Web.UI.Page
         else if (txtDetail.Text == "")
         {
             MessageBox.Alert("留言内容不能为空", Page);
+        }else if(txtCheckCode.Text.Trim()!=Session["CheckCode"].ToString().ToLower())
+        {
+            MessageBox.Alert("验证码错误",Page); 
         }
         else 
         {

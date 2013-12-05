@@ -45,7 +45,7 @@
                                 </tr>
                                 <tr>
                                     <td>验证码：</td>
-                                    <td><asp:TextBox ID="txtCheckCode" runat="server" Width="50px"></asp:TextBox>&nbsp;<img src="../Admin/CodeImage.aspx" height="16px" /></td>
+                                    <td><asp:TextBox ID="txtCheckCode" runat="server" Width="50px"></asp:TextBox>&nbsp;<img src="Admin/CodeImage.aspx" height="16px" /></td>
                                 </tr>
                                 <tr>
                                     <td></td>
