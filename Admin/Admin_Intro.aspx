@@ -6,44 +6,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-            <div>
-                <asp:HiddenField ID="hfIntroID" runat="server" />
-                <table>
-                    <tr>
-                        <td>
-                            <asp:DropDownList ID="dropIntroType" runat="server" OnSelectedIndexChanged="dropIntroType_SelectedIndexChanged"
-                                AutoPostBack="true">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="lblTitle" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <FCKeditorV2:FCKeditor ID="FCKeditor" runat="server" Width="700px" Height="400px"
-                                BasePath="~/fckeditor/">
-                            </FCKeditorV2:FCKeditor>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+    <div class="admin_index_main">
+        <asp:HiddenField ID="hfIntroID" runat="server" />
+        <table>
+            <tr>
+                <td>请选择：
+                    <asp:DropDownList ID="dropIntroType" runat="server" OnSelectedIndexChanged="dropIntroType_SelectedIndexChanged"
+                        AutoPostBack="true">
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <asp:Label ID="lblTitle" runat="server"></asp:Label>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <FCKeditorV2:FCKeditor ID="FCKeditor" runat="server" Width="700px" Height="400px"
+                        BasePath="~/fckeditor/">
+                    </FCKeditorV2:FCKeditor>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;&nbsp;<asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
+                </td>
+            </tr>
+        </table>
+    </div>
     </form>
 </body>
 </html>

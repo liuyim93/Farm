@@ -31,6 +31,7 @@ public partial class Fun_Detail : System.Web.UI.Page
             {
                 ltlTime.Text=list[0].LoadTime.ToString();
                 ltlTitle.Text=list[0].ImgName;
+                ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
                 lblImgName.Text=ltlTitle.Text;
                 int imgTypeId=list[0].ImgTypeID;
                 List<ImageType> list_imgType = ImageTypeBll.GetImageType(imgTypeId);

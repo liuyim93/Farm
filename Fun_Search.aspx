@@ -9,7 +9,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title><asp:Literal ID="ltlBrowserText" runat="server"></asp:Literal></title>
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,8 +29,8 @@
                             onitemdatabound="dlstFun_ItemDataBound">
                             <ItemTemplate>
                                 <div class="house_area">
-                                    <a href="" target="_self"><asp:Image ID="imgFun" runat="server" Width="190px" Height="150px" ImageUrl='<%#Eval("ImgUrl") %>' /></a>
-                                    <div class="house_area_text"><a href="" target="_self"><%#Eval("ImgName") %></a></div>
+                                    <a href="Fun_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="imgFun" runat="server" Width="190px" Height="150px" ImageUrl='<%#Eval("ImgUrl") %>' /></a>
+                                    <div class="house_area_text"><a href="Fun_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><%#Eval("ImgName") %></a></div>
                                 </div>
                             </ItemTemplate>
                         </asp:DataList>

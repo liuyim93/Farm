@@ -35,6 +35,7 @@ public partial class News_Detail : System.Web.UI.Page
                 ltlClickNum.Text=list[0].ClickNum.ToString();
                 ltlTime.Text=list[0].LoadTime;
                 ltlTitle.Text=list[0].Title;
+                ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
                 lblNewsName.Text = ltlTitle.Text;
                 lblNewsDetail.Text=list[0].Detail;
                 int newsTypeId=list[0].NewsTypeID;
@@ -53,7 +54,7 @@ public partial class News_Detail : System.Web.UI.Page
                 if (list_prev.Count > 0)
                 {
                     hlnkPrev.Text = list_prev[0].Title;
-                    hlnkPrev.NavigateUrl = "News_Detail.aspx?id" + list_prev[0].NewsID;
+                    hlnkPrev.NavigateUrl = "News_Detail.aspx?id=" + list_prev[0].NewsID;
                 }
                 else 
                 {

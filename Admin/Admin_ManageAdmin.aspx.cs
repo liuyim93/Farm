@@ -120,4 +120,9 @@ public partial class Admin_Admin_ManageAdmin : System.Web.UI.Page
             return "1";
         }
     }
+    protected void gvwAdminList_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        gvwAdminList.PageIndex = e.NewPageIndex;
+        Bind();
+    }
 }

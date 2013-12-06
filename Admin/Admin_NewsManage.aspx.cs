@@ -116,4 +116,19 @@ public partial class Admin_Admin_NewsManage : System.Web.UI.Page
             Bind();
         }
     }
+    protected void gvwNewsManage_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType==DataControlRowType.DataRow)
+        {
+            LinkButton lbtnType = e.Row.FindControl("lbtnType") as LinkButton;
+            if (lbtnType.Text!="")
+            {
+                List<NewsType> list = NewsTypeBll.GetNewsType(Convert.ToInt32(lbtnType.Text));
+                if (list.Count>0)
+                {
+                    lbtnType.Text=list[0].TypeName;
+                }
+            }
+        }
+    }
 }

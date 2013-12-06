@@ -98,7 +98,7 @@ namespace BLL
         /// <returns></returns>
         public static DataTable GetImagebyImgTypeId(int imgTypeId) 
         {
-            string sql = "select * from [Image] where ImgTypeID="+imgTypeId;
+            string sql = "select * from [Image] where ImgTypeID="+imgTypeId+" order by LoadTime desc";
             return ImageDal.GetImages(sql);
         }
 
@@ -144,6 +144,16 @@ namespace BLL
         {
             string sql = "select * from [Image] where ImgTypeID in (select ImgTypeID from ImageType where ParentID=(select ImgTypeID from ImageType where TypeName='农家娱乐'))";
             return ImageDal.GetImages(sql);
+        }
+
+        /// <summary>
+        /// 查询首页5张图片轮播
+        /// </summary>
+        /// <returns></returns>
+        public static List<image> GetPics() 
+        {
+            string sql = "select top 5 * from [Image] where ImgTypeID=(select ImgTypeID from ImageType where TypeName='图片轮播')";
+            return ImageDal.GetImage(sql);
         }
     }
 }

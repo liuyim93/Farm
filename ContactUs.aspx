@@ -8,7 +8,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>联系我们-金水泊山庄</title>
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>

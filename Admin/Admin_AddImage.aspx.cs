@@ -259,6 +259,15 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
                 ClearText();
                 Bind();
                 break;
+            case"showAll":
+                dlstImg.DataSource = ImageBll.GetAllImage();
+                dlstImg.DataBind();
+                break;
+            case "imgType":
+                int imgTypeId = Convert.ToInt32(e.CommandArgument);
+                dlstImg.DataSource = ImageBll.GetImagebyImgTypeId(imgTypeId);
+                dlstImg.DataBind();
+                break;
             default:
                 break;
         }
@@ -332,5 +341,27 @@ public partial class Admin_Admin_AddImage : System.Web.UI.Page
     protected void drop3_SelectedIndexChanged1(object sender, EventArgs e)
     {
 
+    }
+
+    protected void dlstImg_ItemDataBound(object sender, DataListItemEventArgs e)
+    {
+        if (e.Item.ItemType==ListItemType.Item||e.Item.ItemType==ListItemType.AlternatingItem)
+        {
+            LinkButton lbtnImgType = e.Item.FindControl("lbtnImgType") as LinkButton;
+            List<ImageType> list = ImageTypeBll.GetImageType(Convert.ToInt32(lbtnImgType.Text));
+            if (list.Count > 0)
+            {
+                lbtnImgType.Text = list[0].TypeName;
+            }
+            Label lblIsShow = e.Item.FindControl("lblIsShow") as Label;
+            if (lblIsShow.Text == "1")
+            {
+                lblIsShow.Text = "是";
+            }
+            else 
+            {
+                lblIsShow.Text = "否";
+            }
+        }
     }
 }

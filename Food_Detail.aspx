@@ -8,7 +8,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title><asp:Literal ID="ltlBrowserText" runat="server"></asp:Literal></title>
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
@@ -30,9 +30,9 @@
                             <asp:Image ID="imgFood" runat="server" Width="600px" Height="400px" />
                         </div>
                         <div>
-                            上一篇：<asp:LinkButton 
+                            上一张：<asp:LinkButton 
                                 ID="lbtnPrev" runat="server" onclick="lbtnPrev_Click"></asp:LinkButton><asp:HiddenField ID="hfPrevImgID" runat="server" /><br />
-                            下一篇：<asp:LinkButton ID="lbtnNext" runat="server" onclick="lbtnNext_Click"></asp:LinkButton><asp:HiddenField ID="hfNextImgID" runat="server" />
+                            下一张：<asp:LinkButton ID="lbtnNext" runat="server" onclick="lbtnNext_Click"></asp:LinkButton><asp:HiddenField ID="hfNextImgID" runat="server" />
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,18 @@
-﻿body {padding:0px;margin:0px;
+﻿body {padding:0px;margin:0px;font-size:12px;
 }
-ul{list-style:none;}
-.admin_index_left{width:160px; height:100%;}
-.admin_index_top{width:100%;height:35px;background:url("../Images/admin_top_bg.gif") repeat scroll;}
+ul{list-style:none;padding:0px;margin:0px;}
+a{text-decoration:none;color:#000000;}
+a:hover{color:#ff0000;text-decoration:underline;}
+table{border:1px solid #e4e4e4;margin:0px;padding:0px;margin-top:20px;}
+table tr td{border:1px solid #e4e4e4;min-height:20px;}
+table tr th{text-align:center;font-size:14px;font-weight:bold;background:url("../Images/topBar_bg.gif") repeat-x scroll;height:27px;line-height:27px; border:1px solid #cccccc;}
+.admin_index_left{width:160px; height:100%;margin-left:2px;}
+.admin_index_top{width:100%;height:35px;background:url("../Images/admin_top_bg.gif") repeat scroll;line-height:35px;padding-left:10px;}
+.admin_index_top ul li{float:left;width:100px;height:100%;}
+.admin_index_left_title{background:url("../Images/admin_left_1.gif") no-repeat scroll; height:30px;line-height:30px;padding-left:5px;font-size:14px;font-weight:bold;}
+.admin_index_left_area{width:100%;height:100%;margin:5px auto;}
+.admin_index_left_area ul li{height:20px;line-height:20px;padding-left:15px;}
+.admin_index_main{width:800px;margin:10px auto;padding-left:50px;}
+.td_left{text-align:right;}
+.td_middle{padding-left:5px;}
+.addimage_dlstimg_title{height:25px;line-height:25px;font-size:14px; text-align:center; font-weight:bold;}

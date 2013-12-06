@@ -27,6 +27,9 @@ public partial class News_Search : System.Web.UI.Page
         else 
         {
             int newsTypeId=Convert.ToInt32(Request.QueryString["id"]);
+            List<NewsType> list = NewsTypeBll.GetNewsType(newsTypeId);
+            ltlTitle.Text=list[0].TypeName;
+            ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
             DataTable dt = NewsBll.GetnewsbyTypeId(newsTypeId);
             if (dt.Rows.Count>0)
             {

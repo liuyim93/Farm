@@ -9,7 +9,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title><asp:Literal ID="ltlBrowserText" runat="server"></asp:Literal>-金水泊山庄</title>
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,14 +22,13 @@
                 <uc3:ContactUs ID="contactus1" runat="server" />
             </div>
             <div class="farmintro_right">
-                <div class="farmintro_right_title">您目前的位置：<a href="" target="_self">首页</a>><a href="" target="_self">最新动态</a></div>
+                <div class="farmintro_right_title">您目前的位置：<a href="Index.aspx" target="_self">首页</a>><a href="News.aspx" target="_self">最新动态</a>><asp:Literal ID="ltlTitle" runat="server"></asp:Literal></div>
                 <div class="farmintro_right_content">
                     <div class="farmintro_right_detail">
                         <asp:DataList ID="dlstNews" runat="server" Width="100%">
                             <ItemTemplate>
-                                <div class="news_area">
-                                    <div class="news_area_time"><%#Eval("LoadTime") %></div>
-                                    <a href="News_Detail.aspx?id=<%#Eval("NewsID") %>" target="_self"><%#Eval("Title") %></a>
+                                <div class="news_area">                                    
+                                    <a href="News_Detail.aspx?id=<%#Eval("NewsID") %>" target="_self"><img src="Images/news_before.jpg" alt="" border="0" />&nbsp;<%#Eval("Title") %></a>
                                 </div>
                             </ItemTemplate>
                         </asp:DataList>
@@ -41,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="bottm">
+        <div class="bottom">
             <uc2:Bottom ID="bottom1" runat="server" />
         </div>
     </div>

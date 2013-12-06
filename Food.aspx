@@ -9,7 +9,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>农家菜肴-金水泊山庄</title>
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
@@ -33,12 +33,12 @@
                                     <div class="house_area_text"><a href="Food_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><%#Eval("ImgName") %></a></div>
                                 </div>
                             </ItemTemplate>
-                        </asp:DataList>
-                        <Webdiyer:AspNetPager ID="AspNetPager1" runat="server" CssClass="paginator" CurrentPageButtonClass="cpb"
+                        </asp:DataList>                                                       
+                    </div>
+                     <Webdiyer:AspNetPager ID="AspNetPager1" runat="server" CssClass="paginator" CurrentPageButtonClass="cpb"
                          LastPageText="尾页" FirstPageText="首页" PrevPageText="上一页" NextPageText="下一页" 
                             AlwaysShow="true" UrlPaging="true" PageSize="9" 
                             onpagechanged="AspNetPager1_PageChanged"></Webdiyer:AspNetPager>
-                    </div>
                 </div>
             </div>
         </div>

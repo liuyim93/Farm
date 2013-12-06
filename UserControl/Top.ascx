@@ -1,7 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Top.ascx.cs" Inherits="UserControl_Top" %>
+<script src="Scripts/jquery-1.2.6.js" type="text/javascript"/></script>
 <div class="uc_top">
     <div class="uc_top_logo">
         <a href="Index.aspx" target="_self"><img src="Images/logo.jpg" alt="" width="440px" height="70px" /></a>
+    </div>
+    <div style="position:absolute; top:5px; right:30px;">
+        <a href="#" onclick="SetHome(this)"><img src="Images/home.png" alt="" width="14px" height="14px" border="0" />&nbsp;设为首页</a>&nbsp;&nbsp;<a href="#" title="重庆行网科技有限公司-企业门户网站"><img src="Images/star.png" alt="" width="14px" height="14px" border="0" />&nbsp;加入收藏</a>&nbsp;&nbsp;<a href="ContactUs.aspx" target="_parent"><img src="Images/email.png" alt="" border="0" width="14px" height="14px" />&nbsp;联系我们</a>
     </div>
     <div class="uc_top_menu">
         <ul>
@@ -30,9 +34,7 @@
     </div>
      <script type="text/javascript">
                     var p = $('#picplayer');
-                    var pics1 = [{ url: 'Images/banner1.jpg', link: 'http://www.jb51.net/#', time: 5000 }, { url: 'Images/banner2.jpg', link: 'http://www.jb51.net/#', time: 4000 },
-{ url: '../Images/banner3.jpg', link: 'http://www.jb51.net', time: 6000 }, { url: 'http://img.jb51.net/online/picPlayer/2.jpg', link: 'http://www.jb51.net', time: 6000 },
-{ url: 'http://img.jb51.net/online/picPlayer/1.jpg', link: 'http://www.jb51.net', time: 6000}];
+                    var pics1 = [<%=picStr%>];
                     initPicPlayer(pics1, p.css('width').split('px')[0], p.css('height').split('px')[0]);
                     function initPicPlayer(pics, w, h) {
                         //选中的图片 

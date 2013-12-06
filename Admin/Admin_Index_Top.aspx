@@ -10,14 +10,12 @@
 <body>
     <form id="form1" runat="server">
     <div class="admin_index_top">
-    <table>
-        <tr>
-            <td><img src="" alt="" title="关闭左边管理导航菜单" /></td>
-            <td><a href="" target="main"><img src="" alt="" />修改密码</a></td>
-            <td><a href="" target="main"><img src="" alt="" />留言管理</a></td>
-            <td><a href="" target="main"><img src="" alt="" />用户管理</a></td>
-        </tr>
-    </table>        
+    <ul>
+        <li><img src="Images/admin_top_close.gif" alt="" title="关闭左边管理导航菜单" /></li>
+        <li><a href="Admin_UpdatePwd.aspx" target="main"><img src="Images/admin_top_icon_1.gif" alt="" />&nbsp;修改密码</a></li>
+        <li><a href="Admin_AdviseUnReply.aspx" target="main"><img src="Images/edit.gif" alt="" />&nbsp;留言管理</a></li>
+        <li><a href="Admin_ManageAdmin.aspx" target="main"><img src="Images/admin_top_icon_5.gif" alt="" />&nbsp;用户管理</a></li>
+    </ul>      
     </div>
     </form>
 </body>

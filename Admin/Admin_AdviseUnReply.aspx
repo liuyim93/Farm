@@ -5,10 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div class="admin_index_main">
         <asp:GridView ID="gvwAdviseList" runat="server" AutoGenerateColumns='false' DataKeyNames="AdviseID">
             <Columns>
                 <asp:TemplateField HeaderText="选择">

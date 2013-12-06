@@ -8,7 +8,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title><asp:Literal ID="ltlBrowserText" runat="server"></asp:Literal></title>
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,13 +25,13 @@
                 <div class="farmintro_right_content">
                     <div class="farmintro_right_detail">
                         <div class="housedetail_title"><asp:Label ID="lblImgName" runat="server"></asp:Label></div>
-                        <div class="housedetail_time">作者：admin&nbsp;&nbsp;<asp:Literal ID="ltlTime" runat="server"></asp:Literal></div>
+                        <div class="housedetail_time">作者：admin&nbsp;&nbsp;发布时间：<asp:Literal ID="ltlTime" runat="server"></asp:Literal></div>
                         <div class="housedetail_img">
                             <asp:Image ID="imgFun" runat="server" Width="600px" Height="400px" />
                         </div>
                         <div>
-                             上一篇：<asp:HyperLink ID="hlnkPrev" runat="server"></asp:HyperLink><br />
-                            下一篇：<asp:HyperLink ID="hlnkNext" runat="server"></asp:HyperLink>
+                             上一张：<asp:HyperLink ID="hlnkPrev" runat="server"></asp:HyperLink><br />
+                            下一张：<asp:HyperLink ID="hlnkNext" runat="server"></asp:HyperLink>
                         </div>
                     </div>
                 </div>

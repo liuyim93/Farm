@@ -5,28 +5,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <table>
+    <div class="admin_index_main">
+        <table width="100%">
             <tr>
                 <td></td>
                 <td>内容</td>
                 <td>说明</td>
             </tr>
             <tr>
-                <td>类别名称：</td>
+                <td class="td_left">类别名称：</td>
                 <td><asp:TextBox ID="txtTypeName" runat="server"></asp:TextBox></td>
                 <td></td>
             </tr>
             <tr>
-                <td>类别说明：</td>
+                <td class="td_left">类别说明：</td>
                 <td><asp:TextBox ID="txtRemark" runat="server" TextMode="MultiLine"></asp:TextBox></td>
                 <td></td>
             </tr>
             <tr>
-                <td></td>
+                <td class="td_left"></td>
                 <td><asp:Button ID="btnSubmit" runat="server" Text="提交" onclick="btnSubmit_Click" /></td>
             </tr>
             <tr>

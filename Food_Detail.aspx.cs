@@ -31,6 +31,7 @@ public partial class Food_Detail : System.Web.UI.Page
             {
                 lblImgName.Text=list[0].ImgName;
                 ltlTitle.Text = lblImgName.Text;
+                ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
                 ltlTime.Text=list[0].LoadTime.ToString();
                 int imgTypeId=list[0].ImgTypeID;
                 List<image> list_prev = ImageBll.GetPrevImage(imgTypeId,imgId);

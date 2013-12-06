@@ -51,6 +51,7 @@ public partial class House_Detail : System.Web.UI.Page
             {
                 List<ImageType> list_imgType = ImageTypeBll.GetImageType(list[0].ImgTypeID);
                 ltlTitle.Text=list_imgType[0].TypeName;
+                ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
                 lblImgName.Text =list[0].ImgName;
                 ltlTime.Text=list[0].LoadTime.ToString();
                 string imgUrls = list[0].ImgUrl;

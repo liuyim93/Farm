@@ -5,18 +5,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <table>
+    <div class="admin_index_main">
+        <table width="100%">
             <tr>
-                <th>文章管理</th>
+                <th colspan="4">文章管理</th>
             </tr>
             <tr>
                 <td colspan="4" width="700px">
                     <asp:GridView ID="gvwNewsManage" runat="server" AutoGenerateColumns="false" 
-                        Width="100%" onrowcommand="gvwNewsManage_RowCommand" DataKeyNames="NewsID">
+                        Width="100%" onrowcommand="gvwNewsManage_RowCommand" DataKeyNames="NewsID" 
+                        onrowdatabound="gvwNewsManage_RowDataBound">
                         <Columns>
                             <asp:TemplateField HeaderText="选择">
                                 <ItemTemplate>

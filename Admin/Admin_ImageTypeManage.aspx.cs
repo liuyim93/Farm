@@ -208,6 +208,32 @@ public partial class Admin_Admin_ImageTypeManage : System.Web.UI.Page
         {
             Label lblNum = e.Row.FindControl("lblNum") as Label;
             lblNum.Text = (e.Row.RowIndex + 1).ToString();
+            Label lblShow = e.Row.FindControl("lblShow") as Label;
+            if (lblShow.Text == "1")
+            {
+                lblShow.Text = "是";
+            }
+            else 
+            {
+                lblShow.Text = "否";
+            }
+            Label lblParent = e.Row.FindControl("lblParent") as Label;
+            if (lblParent.Text == "0"||lblParent.Text=="")
+            {
+                lblParent.Text = "";
+            }
+            else 
+            {
+                List<ImageType> list = ImageTypeBll.GetImageType(Convert.ToInt32(lblParent.Text));
+                if (list.Count > 0)
+                {
+                    lblParent.Text = list[0].TypeName;
+                }
+                else 
+                {
+                    lblParent.Text = "";
+                }
+            }
         }
     }
     protected void gvwImgType_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -283,5 +309,11 @@ public partial class Admin_Admin_ImageTypeManage : System.Web.UI.Page
             default:
                 break;
         }
+    }
+    protected void gvwImgType_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        gvwImgType.PageIndex = e.NewPageIndex;
+        gvwImgType.DataSource = ImageTypeBll.GetAllImageType();
+        gvwImgType.DataBind();
     }
 }

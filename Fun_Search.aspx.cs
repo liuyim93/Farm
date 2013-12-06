@@ -29,6 +29,7 @@ public partial class Fun_Search : System.Web.UI.Page
             int imgTypeId = Convert.ToInt32(Request.QueryString["id"]);
             List<ImageType> list = ImageTypeBll.GetImageType(imgTypeId);
             ltlTitle.Text=list[0].TypeName;
+            ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
             DataTable dt = ImageBll.GetImagebyImgTypeId(imgTypeId);
             if (dt.Rows.Count>0)
             {

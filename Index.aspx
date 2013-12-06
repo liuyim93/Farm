@@ -7,7 +7,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>金水泊山庄-首页</title>
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
     <script src="Scripts/jquery-1.2.6.js" type="text/javascript"/></script>
 </head>
@@ -17,15 +17,15 @@
         <uc1:Top ID="top1" runat="server" />
         <div class="index_top">
             <div class="index_top_left">
-                 <div class="index_top_left_title"><div class="newstitle_more"><a href="" target="_self"><img src="Images/more.gif" alt="" border="0" align="absmiddle" /></a></div></div>
+                 <div class="index_top_left_title"><div class="newstitle_more"><a href="News_Search.aspx?id=2" target="_self"><img src="Images/more.gif" alt="" border="0" align="absmiddle" /></a></div></div>
                 <div class="index_top_left_content">
                     <asp:DataList ID="dlstNews" runat="server" Width="100%">
                         <ItemTemplate>
                             <div class="dlstnews_area">
                             <div class="dlstnews_area_time">
-                                <asp:Literal ID="ltlTime" runat="server" Text='<%#Eval("LoadTime") %>'></asp:Literal>
+                                <asp:Literal ID="ltlTime" runat="server" Text='<%#Eval("LoadTime").ToString().Substring(0,10) %>'></asp:Literal>
                             </div>
-                                <div class="dlstnews_area_text"><a href="" target="_self"><%#Eval("Detail") %></a></div>                            
+                                <div class="dlstnews_area_text"><a href="" target="_self"><%#Eval("Title").ToString().Length>20?Eval("Title").ToString().Substring(0,20):Eval("Title") %></a></div>                            
                             </div>                            
                         </ItemTemplate>
                     </asp:DataList>
@@ -34,10 +34,11 @@
             <div class="index_top_right">
                 <div class="index_top_right_title"></div>
                 <div class="index_top_right_content">
-                    <asp:DataList ID="dlstImage" runat="server" RepeatDirection="Horizontal" Width="100%">
+                    <asp:DataList ID="dlstImage" runat="server" RepeatDirection="Horizontal" 
+                        Width="100%" onitemdatabound="dlstImage_ItemDataBound">
                         <ItemTemplate>
                             <div class="dlstimage_area">                            
-                                <a href="<%#Eval("LinkUrl") %>" target="_self"><img src="<%#Eval("ImgUrl") %>" width="100px" height="70px" /></a><br />                                
+                                <a href="<%#Eval("LinkUrl") %>" target="_self"><asp:Image ID="imgTop" runat="server" Width="111px" Height="77px" ImageUrl='<%#Eval("ImgUrl") %>' /></a><br />                                
                                 <div class="dlstimage_text"><a href="<%#Eval("LinkUrl") %>" target="_self"><%#Eval("ImgName") %></a></div>
                             </div>
                         </ItemTemplate>
@@ -47,13 +48,15 @@
         </div>
         <div class="index_middle">
             <div class="index_middle_left">
-                <div class="index_middle_left_title"></div>
+                <div class="index_middle_left_title"><div class="newstitle_more"><a href="News_Search.aspx?id=3" target="_self"><img src="Images/more.gif" alt="" border="0" align="absmiddle" /></a></div></div>
                 <div class="index_middle_left_content">
                     <asp:DataList ID="dlstActivity" runat="server" Width="100%">
                         <ItemTemplate>
                             <div class="dlstnews_area">
-                                <div class="dlstnews_area_time"><%#Eval("LoadTime") %></div>
-                                <a href="" target="_self"><%#Eval("Title") %></a>                                
+                                <div class="dlstnews_area_time"><%#Eval("LoadTime").ToString().Substring(0,10) %></div>
+                                <div class="dlstnews_area_text">
+                                    <a href="News_Detail.aspx?id=<%#Eval("NewsID") %>" target="_self"><%#Eval("Title").ToString().Length>20?Eval("Title").ToString().Substring(0,20):Eval("Title") %></a>
+                                </div>                                                                
                             </div>
                         </ItemTemplate>
                     </asp:DataList>
@@ -75,11 +78,12 @@
             <div id="marquee">
                 <div style="width:800%;float:left;">
                     <div id="marquee1" style="float:left">
-                        <asp:DataList ID="dlstMarquee" runat="server" RepeatDirection="Horizontal">
+                        <asp:DataList ID="dlstMarquee" runat="server" RepeatDirection="Horizontal" 
+                            Width="100%" onitemdatabound="dlstMarquee_ItemDataBound">
                             <ItemTemplate>
                                 <div class="dlstmarquee_area">
-                                    <a href="" target="_self"><img src='<%#Eval("ImgUrl") %>' alt="" width="80px" height="80px" border="0" /></a>
-                                <div class="dlstmarquee_text"><a href="" target="_self"><%#Eval("ImgName") %></a></div>
+                                    <a href="Image_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="imgBottom" runat="server" Width="120px" Height="100px" ImageUrl='<%#Eval("ImgUrl") %>' /></a>
+                                <div class="dlstImage_text"><a href="Image_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><%#Eval("ImgName") %></a></div>
                                 </div>                                
                             </ItemTemplate>
                         </asp:DataList>

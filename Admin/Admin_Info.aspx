@@ -5,38 +5,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div class="admin_index_main">
     <asp:HiddenField ID="hfInfoID" runat="server" />
-        <table>
+        <table width="100%">
             <tr>
-                <td>农庄名称：</td>
-                <td><asp:TextBox ID="txtFarmName" runat="server" Width="200px"></asp:TextBox></td>
+                <td class="td_left">农庄名称：</td>
+                <td class="td_middle"><asp:TextBox ID="txtFarmName" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>农庄电话：</td>
-                <td><asp:TextBox ID="txtPhone" runat="server"></asp:TextBox></td>
+                <td class="td_left">农庄电话：</td>
+                <td class="td_middle"><asp:TextBox ID="txtPhone" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>手机号码：</td>
-                <td><asp:TextBox ID="txtMobile" runat="server"></asp:TextBox></td>
+                <td class="td_left">手机号码：</td>
+                <td class="td_middle"><asp:TextBox ID="txtMobile" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>地址：</td>
-                <td><asp:TextBox ID="txtAdress" runat="server"></asp:TextBox></td>
+                <td class="td_left">地址：</td>
+                <td class="td_middle"><asp:TextBox ID="txtAdress" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>联系人：</td>
-                <td><asp:TextBox ID="txtLinkman" runat="server"></asp:TextBox></td>
+                <td class="td_left">联系人：</td>
+                <td class="td_middle"><asp:TextBox ID="txtLinkman" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>邮箱：</td>
-                <td><asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
+                <td class="td_left">邮箱：</td>
+                <td class="td_middle"><asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td><asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" Text="提交" /></td>
+                <td class="td_left"></td>
+                <td class="td_middle"><asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" Text="提交" /></td>
             </tr>
         </table>
     </div>

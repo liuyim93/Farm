@@ -31,6 +31,7 @@ public partial class House_Search : System.Web.UI.Page
             if (list.Count>0)
             {
                 ltlTitle.Text=list[0].TypeName;
+                ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
             }
             DataTable dt = ImageBll.GetImagebyImgTypeId(imgTypeId);
             if (dt.Rows.Count>0)
