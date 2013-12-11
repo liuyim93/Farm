@@ -60,17 +60,29 @@ namespace DAL
             return SqlHelper.ExecuteNonQuery(CommandType.Text,sql,new OleDbParameter("@AdminID",adminId));
         }
 
+        ///// <summary>
+        ///// 修改密码
+        ///// </summary>
+        ///// <param name="adminId"></param>
+        ///// <param name="password"></param>
+        ///// <returns></returns>
+        //public static int UpdatePwd(int adminId,string password) 
+        //{
+        //    string sql = "update Admin set [password]=@password where AdminID=@AdminID";
+        //    return SqlHelper.ExecuteNonQuery(CommandType.Text,sql,new OleDbParameter("@AdminID",adminId),
+        //        new OleDbParameter("@password",password));
+        //}
+
         /// <summary>
         /// 修改密码
         /// </summary>
         /// <param name="adminId"></param>
-        /// <param name="password"></param>
+        /// <param name="pwd"></param>
         /// <returns></returns>
-        public static int UpdatePwd(int adminId,string password) 
+        public static int UpdatePwd(int adminId,string pwd) 
         {
-            string sql = "update Admin set [password]=@password where AdminID=@AdminID";
-            return SqlHelper.ExecuteNonQuery(CommandType.Text,sql,new OleDbParameter("@AdminID",adminId),
-                new OleDbParameter("@password",password));
+            string sql = "update Admin set [password]='"+pwd+"' where AdminID="+adminId;
+            return SqlHelper.DoSql(sql);
         }
     }
 }

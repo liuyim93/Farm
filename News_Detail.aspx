@@ -13,8 +13,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+	<uc1:Top ID="top1" runat="server" />
     <div class="farmintro">
-        <uc1:Top ID="top1" runat="server" />
+        
         <div class="farmintro_content">
             <div class="farmintro_left">
                 <uc4:NewsMenu ID="newsmenu1" runat="server" />

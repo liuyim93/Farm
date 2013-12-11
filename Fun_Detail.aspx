@@ -12,10 +12,10 @@
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server"><div class="farmintro_content">
     <div class="farmintro">
         <uc1:Top ID="top1" runat="server" />
-        <div class="farmintro_content">
+        
             <div class="farmintro_left">
                 <uc4:FunMenu ID="funmenu1" runat="server" />
                 <uc3:ContactUs ID="contactus1" runat="server" />

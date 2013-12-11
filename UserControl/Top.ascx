@@ -2,12 +2,14 @@
 <script src="Scripts/jquery-1.2.6.js" type="text/javascript"/></script>
 <div class="uc_top">
     <div class="uc_top_logo">
-        <a href="Index.aspx" target="_self"><img src="Images/logo.jpg" alt="" width="440px" height="70px" /></a>
+        <a href="Index.aspx" target="_self"><img src="Images/logo.jpg" alt="" width="550px" height="120px" /></a>
     </div>
     <div style="position:absolute; top:5px; right:30px;">
         <a href="#" onclick="SetHome(this)"><img src="Images/home.png" alt="" width="14px" height="14px" border="0" />&nbsp;设为首页</a>&nbsp;&nbsp;<a href="#" title="重庆行网科技有限公司-企业门户网站"><img src="Images/star.png" alt="" width="14px" height="14px" border="0" />&nbsp;加入收藏</a>&nbsp;&nbsp;<a href="ContactUs.aspx" target="_parent"><img src="Images/email.png" alt="" border="0" width="14px" height="14px" />&nbsp;联系我们</a>
     </div>
-    <div class="uc_top_menu">
+</div>  
+<div class="uc_top_box" align="center">  
+    <div class="uc_top_menu" >
         <ul>
             <li><a href="Index.aspx" target="_self">首页</a></li>
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
@@ -29,6 +31,7 @@
             <li><img src="Images/menu_mid.png" / width="1px" height="35px"></li>
             <li><a href="ContactUs.aspx" target="_self">联系我们</a></li>
         </ul>
+		</div>
     </div>
     <div id="picplayer">        
     </div>
@@ -102,4 +105,3 @@
                         }
                     }                  
     </script>
-</div>

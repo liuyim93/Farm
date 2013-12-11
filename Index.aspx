@@ -25,7 +25,7 @@
                             <div class="dlstnews_area_time">
                                 <asp:Literal ID="ltlTime" runat="server" Text='<%#Eval("LoadTime").ToString().Substring(0,10) %>'></asp:Literal>
                             </div>
-                                <div class="dlstnews_area_text"><a href="" target="_self"><%#Eval("Title").ToString().Length>20?Eval("Title").ToString().Substring(0,20):Eval("Title") %></a></div>                            
+                                <div class="dlstnews_area_text"><a href="News_Detail.aspx?id=<%#Eval("NewsID") %>" target="_self"><%#Eval("Title").ToString().Length>20?Eval("Title").ToString().Substring(0,20):Eval("Title") %></a></div>                            
                             </div>                            
                         </ItemTemplate>
                     </asp:DataList>

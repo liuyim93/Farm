@@ -11,7 +11,7 @@
                 </td>
             </tr>
             <tr>
-                <td>版权所有 Copyright(C)2009-2010 重庆金水泊山庄</td>
+                <td>版权所有 Copyright&copy;2013-2018 重庆金水泊山庄&nbsp;&nbsp;联系电话：18602303365 QQ：<a target=blank href=http://wpa.qq.com/msgrd?V=1&amp;Uin=1441332013&amp;Site=金水泊山庄&amp;Menu=yes>1441332013</a><br>技术支持:重庆行网科技有限公司</td>
             </tr>
         </table>
     </div>

@@ -54,21 +54,33 @@ namespace DAL
             return list;
         }
 
+        ///// <summary>
+        ///// 修改网站信息
+        ///// </summary>
+        ///// <param name="info"></param>
+        ///// <returns></returns>
+        //public static int UpdateInfo(FarmInfo info) 
+        //{
+        //    string sql = "update FarmInfo set FarmName=@FarmName,Phone=@Phone,Linkman=@Linkman,Mobile=@Mobile,Adress=@Adress,Email=@Email where InfoID=@InfoID";
+        //    return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@InfoID", info.InfoID),
+        //        new OleDbParameter("@FarmName", info.FarmName),
+        //        new OleDbParameter("@Phone", info.Phone),
+        //        new OleDbParameter("@Linkman", info.Linkman),
+        //        new OleDbParameter("@Mobile", info.Mobile),
+        //        new OleDbParameter("@Adress", info.Adress),
+        //        new OleDbParameter("@Email", info.Email));
+        //}
+
         /// <summary>
-        /// 修改网站信息
+        /// 修改农庄信息
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
         public static int UpdateInfo(FarmInfo info) 
         {
-            string sql = "update FarmInfo set FarmName=@FarmName,Phone=@Phone,Linkman=@Linkman,Mobile=@Mobile,Adress=@Adress,Email=@Email where InfoID=@InfoID";
-            return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new OleDbParameter("@InfoID", info.InfoID),
-                new OleDbParameter("@FarmName", info.FarmName),
-                new OleDbParameter("@Phone", info.Phone),
-                new OleDbParameter("@Linkman", info.Linkman),
-                new OleDbParameter("@Mobile", info.Mobile),
-                new OleDbParameter("@Adress", info.Adress),
-                new OleDbParameter("@Email", info.Email));
+            string sql = "update FarmInfo set FarmName='"+info.FarmName+"',Phone='"+info.Phone+"',Linkman='"+info.Linkman+"',Mobile='"+info.Mobile+"',Adress='"+info.Adress+"',Email='"+info.Email+"' where InfoID="+info.InfoID;
+            return SqlHelper.DoSql(sql);
         }
+
     }
 }

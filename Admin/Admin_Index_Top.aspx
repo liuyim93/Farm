@@ -11,10 +11,10 @@
     <form id="form1" runat="server">
     <div class="admin_index_top">
     <ul>
-        <li><img src="Images/admin_top_close.gif" alt="" title="关闭左边管理导航菜单" /></li>
-        <li><a href="Admin_UpdatePwd.aspx" target="main"><img src="Images/admin_top_icon_1.gif" alt="" />&nbsp;修改密码</a></li>
-        <li><a href="Admin_AdviseUnReply.aspx" target="main"><img src="Images/edit.gif" alt="" />&nbsp;留言管理</a></li>
-        <li><a href="Admin_ManageAdmin.aspx" target="main"><img src="Images/admin_top_icon_5.gif" alt="" />&nbsp;用户管理</a></li>
+        <li><img src="Images/admin_top_close.gif" alt="" title="关闭左边管理导航菜单" align="absmiddle" /></li>
+        <li><a href="Admin_UpdatePwd.aspx" target="main"><img src="Images/admin_top_icon_1.gif" alt="" border="0" />&nbsp;修改密码</a></li>
+        <li><a href="Admin_AdviseUnReply.aspx" target="main"><img src="Images/edit.gif" alt="" border="0" />&nbsp;留言管理</a></li>
+        <li><a href="Admin_ManageAdmin.aspx" target="main"><img src="Images/admin_top_icon_5.gif" alt="" border="0" />&nbsp;用户管理</a></li>
     </ul>      
     </div>
     </form>

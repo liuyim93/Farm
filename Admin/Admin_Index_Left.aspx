@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div class="admin_index_left">
         <img src="Images/title.gif" alt="" width="160px" height="40px" />
-        <div class="admin_index_left_title"><a href="../Index.aspx" target="_blank">网站首页</a>|<a href="Admin_Login.aspx" target="_self">退出</a></div>
+        <div class="admin_index_left_title"><a href="../Index.aspx" target="_blank">网站首页</a>|<a href="Admin_Login.aspx" target="_parent">退出</a></div>
         <div class="admin_index_left_area">
             <div class="admin_index_left_title">系统设置</div>
             <ul>
