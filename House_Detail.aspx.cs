@@ -53,6 +53,7 @@ public partial class House_Detail : System.Web.UI.Page
                 ltlTitle.Text=list_imgType[0].TypeName;
                 ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
                 lblImgName.Text =list[0].ImgName;
+                lblRemark.Text=list[0].Remark;
                 ltlTime.Text=list[0].LoadTime.ToString();
                 string imgUrls = list[0].ImgUrl;
                 string[] ImgUrl = imgUrls.Split('/');

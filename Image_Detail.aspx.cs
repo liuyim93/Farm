@@ -33,6 +33,7 @@ public partial class Image_Detail : System.Web.UI.Page
                 ltlTitle.Text=lblImgName.Text;
                 ltlBrowserText.Text = ltlTitle.Text + "-金水泊山庄";
                 ltlTime.Text=list[0].LoadTime.ToString();
+                lblRemark.Text=list[0].Remark;
                 int imgTypeId=list[0].ImgTypeID;
                 List<ImageType> list_imgType = ImageTypeBll.GetImageType(imgTypeId);
                 if (list_imgType.Count>0)

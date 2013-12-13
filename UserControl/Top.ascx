@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Top.ascx.cs" Inherits="UserControl_Top" %>
 <script src="Scripts/jquery-1.2.6.js" type="text/javascript"/></script>
+<script src="Scripts/farm.js" type="text/javascript"></script>
 <div class="uc_top">
     <div class="uc_top_logo">
         <a href="Index.aspx" target="_self"><img src="Images/logo.jpg" alt="" width="550px" height="120px" /></a>
@@ -58,7 +59,7 @@
                             c.append('<a href="' + pics[i].link + '" target="_blank"><img id="picitem' + i + '" style="display: none;z-index:' + i + '" src="' + pics[i].url + '" /></a>');
                         }
                         //按钮容器，绝对定位在右下角 
-                        p.append('<div id="picbtnHolder" style="position:absolute;top:' + (h - 30) + 'px;width:' + w + 'px;height:20px;z-index:10000;"></div>');
+                        p.append('<div id="picbtnHolder" style="position:absolute;top:' + (h - 25) + 'px;width:' + w + 'px;height:20px;z-index:10000;"></div>');
                         // 
                         var btnHolder = $('#picbtnHolder');
                         btnHolder.append('<div id="picbtns" style="float:right; padding-right:10px;"></div>');
@@ -94,7 +95,7 @@
                                 selectedBtn.css('color', '#000');
                             }
                             selectedBtn = $('#picbtn' + index);
-                            selectedBtn.css('backgroundColor', '#8f0100');
+                            selectedBtn.css('backgroundColor', '#a1d191');
                             selectedBtn.css('color', '#fff');
                             //自动播放 
                             playID = setInterval(function () {

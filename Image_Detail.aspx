@@ -30,6 +30,9 @@
                         <div class="housedetail_img">
                             <asp:Image ID="img" runat="server" Width="600px" Height="400px" />
                         </div>
+                        <div class="imgdetail_remark">
+                            <asp:Label ID="lblRemark" runat="server"></asp:Label>
+                        </div>
                         <div>
                             上一张：<asp:HyperLink ID="hlnkPrev" runat="server"></asp:HyperLink><br />
                             下一张：<asp:HyperLink ID="hlnkNext" runat="server"></asp:HyperLink>

@@ -27,8 +27,11 @@
                     <div class="farmintro_right_detail">
                         <div class="housedetail_title"><asp:Label ID="lblImgName" runat="server"></asp:Label></div>
                         <div class="housedetail_time">作者：admin&nbsp;&nbsp;发布时间：<asp:Literal ID="ltlTime" runat="server"></asp:Literal></div>
-                        <div class=housedetail_img">
+                        <div class="housedetail_img">
                             <asp:Image ID="imgFood" runat="server" Width="600px" Height="400px" />
+                        </div>
+                        <div class="imgdetail_remark">
+                            <asp:Label ID="lblRemark" runat="server"></asp:Label>
                         </div>
                         <div>
                             上一张：<asp:LinkButton 

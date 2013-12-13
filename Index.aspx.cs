@@ -28,7 +28,7 @@ public partial class Index : System.Web.UI.Page
         {            
             if (list[0].Detail.Length > 340)
             {
-                ltlFarmIntro.Text = list[0].Detail.Substring(0, 340)+"...";
+                ltlFarmIntro.Text = list[0].Detail.Substring(0, 355)+"...";
             }
             else 
             {

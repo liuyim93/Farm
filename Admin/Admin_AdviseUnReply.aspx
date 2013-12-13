@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div class="admin_index_main">
-        <asp:GridView ID="gvwAdviseList" runat="server" AutoGenerateColumns='false' DataKeyNames="AdviseID">
+        <asp:GridView ID="gvwAdviseList" runat="server" AutoGenerateColumns='false' DataKeyNames="AdviseID" Width="100%">
             <Columns>
                 <asp:TemplateField HeaderText="选择">
                     <ItemTemplate>

@@ -30,7 +30,9 @@
                             onitemdatabound="dlstFood_ItemDataBound" Width="100%">
                             <ItemTemplate>
                                 <div class="house_area">
-                                    <a href="Food_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="imgFood" runat="server" Width="190px" Height="150px" ImageUrl='<%#Eval("ImgUrl") %>' /></a>
+                                    <div class="house_area_img">                                                                            
+                                        <a href="Food_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="imgFood" runat="server" Width="190px" Height="150px" ImageUrl='<%#Eval("ImgUrl") %>' /></a>
+                                    </div>
                                     <div class="house_area_text"><a href="Food_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><%#Eval("ImgName") %></a></div>
                                 </div>
                             </ItemTemplate>

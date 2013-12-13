@@ -25,11 +25,13 @@
                 <div class="farmintro_right_title">您目前的位置：<a href="Index.aspx" target="_self">首页</a>><asp:Literal ID="ltlTitle" runat="server"></asp:Literal></div>
                 <div class="farmintro_right_content">
                     <div class="farmintro_right_detail">
-                        <asp:DataList ID="dlstImg" runat="server" width="100%" RepeatColumns="3" 
+                        <asp:DataList ID="dlstImg" runat="server" RepeatColumns="3" 
                             onitemdatabound="dlstImg_ItemDataBound">
                             <ItemTemplate>
                                 <div class="house_area">
-                                    <a href="Image_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="img" runat="server" ImageUrl='<%#Eval("ImgUrl") %>' Width="190px" Height="150px" /></a>
+                                    <div class="house_area_img">                                                                            
+                                        <a href="Image_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="img" runat="server" ImageUrl='<%#Eval("ImgUrl") %>' Width="190px" Height="150px" /></a>
+                                    </div>
                                     <div class="house_area_text"><a href="Image_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><%#Eval("ImgName") %></a></div>
                                 </div>
                             </ItemTemplate>

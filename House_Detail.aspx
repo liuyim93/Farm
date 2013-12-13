@@ -10,6 +10,7 @@
 <head runat="server">
     <title><asp:Literal ID="ltlBrowserText" runat="server"></asp:Literal></title>
     <link href="Styles/Style.css" rel="Stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.2.6.js" type="text/javascript"/></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -27,6 +28,9 @@
                         <div class="housedetail_title"><asp:Label ID="lblImgName" runat="server"></asp:Label></div>
                         <div class="housedetail_time">作者：admin&nbsp;&nbsp;发布时间：<asp:Label ID="ltlTime" runat="server"></asp:Label></div>
                         <div class="housedetail_img"><asp:Image ID="img" runat="server" Width="600px" Height="400px" /></div>
+                        <div class="imgdetail_remark">
+                            <asp:Label ID="lblRemark" runat="server"></asp:Label>
+                        </div>
                         <div class="housedetail_page">
                             上一篇：<asp:LinkButton 
                                 ID="lbtnPrev" runat="server" onclick="lbtnPrev_Click"></asp:LinkButton><asp:HiddenField ID="hfPrevImgID" runat="server" /><br />

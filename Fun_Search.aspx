@@ -29,7 +29,9 @@
                             onitemdatabound="dlstFun_ItemDataBound">
                             <ItemTemplate>
                                 <div class="house_area">
-                                    <a href="Fun_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="imgFun" runat="server" Width="190px" Height="150px" ImageUrl='<%#Eval("ImgUrl") %>' /></a>
+                                    <div class="house_area_img">                                                                            
+                                        <a href="Fun_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><asp:Image ID="imgFun" runat="server" Width="190px" Height="150px" ImageUrl='<%#Eval("ImgUrl") %>' /></a>
+                                    </div>
                                     <div class="house_area_text"><a href="Fun_Detail.aspx?id=<%#Eval("ImgID") %>" target="_self"><%#Eval("ImgName") %></a></div>
                                 </div>
                             </ItemTemplate>
