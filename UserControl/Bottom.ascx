@@ -3,11 +3,11 @@
     <div id="uc_bottom_content">
         <table width="100%" height="100%">
             <tr>
-                <td><a href="" target="_self">关于我们</a>|
-                    <a href="" target="_self">访客留言</a>|
-                    <a href="" target="_self">友情链接</a>|
-                    <a href="" target="_self">新闻动态</a>|
-                    <a href="" target="_self">联系我们</a>
+                <td><a href="FarmIntro.aspx" target="_self">关于我们</a>|
+                    <a href="Advise.aspx" target="_self">访客留言</a>|
+                    <a href="#" target="_self">友情链接</a>|
+                    <a href="News.aspx" target="_self">新闻动态</a>|
+                    <a href="ContactUs.aspx" target="_self">联系我们</a>
                 </td>
             </tr>
             <tr>

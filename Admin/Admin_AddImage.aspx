@@ -10,8 +10,6 @@
 <body>
     <form id="form1" runat="server">
     <div class="admin_index_main">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div>
                     <table width="100%">
@@ -124,12 +122,6 @@
                         </ItemTemplate>
                     </asp:DataList>
                 </div>
-            </ContentTemplate>
-            <Triggers>
-                <asp:PostBackTrigger ControlID="btnUpload" />
-                <asp:PostBackTrigger ControlID="btnSubmit" />
-            </Triggers>
-        </asp:UpdatePanel>
     </div>
     </form>
 </body>

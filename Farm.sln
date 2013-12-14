@@ -3,8 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Farm", ".", "{EFA8B247-74A7-49A4-A4F3-E042B37C76F6}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{37B05E42-A8A8-4ED3-82FC-62914749DDE2}|BLL.dll;{1802CCB6-FA4D-4AB3-A805-633E530BC19E}|Model.dll;{19FD5527-C3F6-4002-88FA-050BC9F8A8C3}|Tools.dll;{8324C6BF-B0A6-40CA-BF71-6A1E6460E4B8}|DAL.dll;"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		ProjectReferences = "{1802CCB6-FA4D-4AB3-A805-633E530BC19E}|Model.dll;{8324C6BF-B0A6-40CA-BF71-6A1E6460E4B8}|DAL.dll;{19FD5527-C3F6-4002-88FA-050BC9F8A8C3}|Tools.dll;{37B05E42-A8A8-4ED3-82FC-62914749DDE2}|BLL.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Farm"
 		Debug.AspNetCompiler.PhysicalPath = "..\Farm\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Farm\"
